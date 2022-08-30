@@ -1,2 +1,21 @@
-<h1>Profiles#index</h1>
-<p>Find me in app/views/profiles/index.html.erb</p>
+<div class="wrapper">
+  <div class="title-text">
+    <h1>Welcome back!</h1>
+    <h2>Here is your team! ⭐️</h2>
+  </div>
+  <div class="profile-pictures">
+    <div class="grid">
+      <% @profiles.each do |profile| %>
+        <div class="profile-avatar">
+          <%= cl_image_tag profile.picture.key, height: 200, width: 200, crop: :fill, class: "big-avatar" %>
+        </div>
+        <div class="profile-name">
+          <%= profile.name %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="add-button">
+    <%= link_to "Add a team member!", root_path %>
+  </div>
+</div>
