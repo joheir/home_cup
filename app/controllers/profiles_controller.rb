@@ -1,12 +1,17 @@
 class ProfilesController < ApplicationController
   def index
+    @disable_log_out = true
+    @disable_nav = true
     @profiles = Profile.all
   end
 
   def show
+    @profile = Profile.find(params[:id])
   end
 
   def new
+    @disable_log_out = true
+    @disable_nav = true
     @profile = Profile.new
   end
 
