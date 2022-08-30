@@ -12,12 +12,15 @@
 
   <body>
 
+
   <%= render "shared/flashes" %>
     <div class="guide-lines">
-        <%= yield %>
+      <%= render "shared/profile_avatar" unless @disable_log_out %>
+      <%= yield %>
     </div>
 
-    <%= render "shared/navbar" %>
+    <%= render "shared/navbar" unless @disable_nav %>
+
 
   </body>
 </html>
