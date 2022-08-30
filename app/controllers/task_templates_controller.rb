@@ -3,13 +3,13 @@ class TaskTemplatesController < ApplicationController
 
   def index
     @tasks = TaskTemplate.all
+    @task = TaskTemplate.new
   end
 
   def show
   end
 
   def new
-    @task = TaskTemplate.new
   end
 
 
@@ -18,9 +18,10 @@ class TaskTemplatesController < ApplicationController
 
   def create
     @task = TaskTemplate.new(task_params)
+    @task.account = current_account
 
     respond_to do |format|
-      if @task.save
+      if @task.save!
         format.html { redirect_to task_url(@task), notice: "Task was successfully created." }
         format.json { render :show, status: :created, location: @task }
       else
@@ -58,6 +59,6 @@ class TaskTemplatesController < ApplicationController
     end
 
     def task_params
-      params.require(:task).permit(:title, :description, :min_age, :weekday)
+      params.require(:task_template).permit(:title, :description, :min_age, :weekday)
     end
 end
