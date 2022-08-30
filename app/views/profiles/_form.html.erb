@@ -1,4 +1,4 @@
-<%= simple_form_for(profile) do |f| %>
+<%= simple_form_for(@profile, html: {"data-turbo": false}) do |f| %>
   <%= f.input :name %>
   <%= f.input :admin, as: :boolean %>
   <%= f.input :age %>
