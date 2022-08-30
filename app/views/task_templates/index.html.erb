@@ -1,2 +1,8 @@
-<h1>TaskTemplates#index</h1>
-<p>Find me in app/views/task_templates/index.html.erb</p>
+<h1>TaskTemplates</h1>
+
+<div><%= render "shared/guidelines" %>
+</div>
+
+<% @tasks.each do |task| %>
+  <div><%= task.title %></div>
+<% end %>
