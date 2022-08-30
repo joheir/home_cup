@@ -1,0 +1,7 @@
+<%= simple_form_for(profile) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :admin, as: :boolean %>
+  <%= f.input :age %>
+  <%= f.input :picture, as: :file %>
+  <%= f.submit %>
+<% end %>
