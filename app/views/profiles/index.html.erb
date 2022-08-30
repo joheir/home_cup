@@ -7,7 +7,7 @@
     <div class="grid">
       <% @profiles.each do |profile| %>
         <div class="profile-avatar">
-          <%= cl_image_tag profile.picture.key, height: 200, width: 200, crop: :fill %>
+          <%= cl_image_tag profile.picture.key, height: 200, width: 200, crop: :fill, class: "big-avatar" %>
         </div>
         <div class="profile-name">
           <%= profile.name %>
@@ -16,6 +16,6 @@
     </div>
   </div>
   <div class="add-button">
-    
+    <%= link_to "Add a team member!", root_path %>
   </div>
 </div>
