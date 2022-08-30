@@ -1,0 +1,11 @@
+<%= simple_form_for(@task, html: {"data-turbo": false} ) do |f| %>
+    <%= f.input :title %>
+    <%= f.input :description %>
+    <%= f.input :min_age %>
+    <%= f.input :weekday %>
+
+
+    <div class="form-actions">
+      <%= f.button :submit, 'Assign a task!' %>
+    </div>
+  <% end %>
