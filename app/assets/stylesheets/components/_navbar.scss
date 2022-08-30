@@ -1,12 +1,27 @@
-.navbar-lewagon {
+.navbar-wrapper {
+  width: 100%;
+  height: 100px;
+  background-color: $yellow;
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+}
+
+.u-list {
+  display: flex;
+  align-items: center;
+  align-items: center;
   justify-content: space-between;
-  background: white;
+  margin-top: 15px;
+  width: 100%;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+.u-list li {
+  margin-right: 20px;
+  list-style-type: none;
 }
-
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.u-list a {
+  color: $black;
 }
