@@ -1,2 +1,14 @@
 <h1>Meals#index</h1>
 <p>Find me in app/views/meals/index.html.erb</p>
+
+<h2>All meals:</h2>
+
+<ul class="recipe-list">
+  <% @meals.each do |meal| %>
+    <div>
+      <div>
+          <%= image_tag(meal.picture_url, class:"img") %>
+      </div>
+      <p><%= meal.name %></p>
+    </div>
+  <% end %>

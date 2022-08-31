@@ -21,9 +21,9 @@ class TaskTemplatesController < ApplicationController
     @task_template.account = current_account
 
     respond_to do |format|
-      if @task_template.save!
-        format.html { redirect_to task_templates_path notice: "Task was successfully created." }
-        format.json { render :show, status: :created, location: @task_template }
+      if @task.save
+        format.html { redirect_to task_templates_path, notice: "Task was successfully created." }
+        format.json { render :show, status: :created, location: task_templates_path}
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @task_template.errors, status: :unprocessable_entity }
