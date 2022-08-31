@@ -55,11 +55,13 @@
 .btn-gb {
    margin-top: 100px;
 }
-.btn-gb-1 {
+
+// WELCOME PAGE
+.btn-welcome {
    width: 180px;
    height: 50px;
-   background-color: $green-blue;
-   color: #0c3b40;
+   background-color: $dark-blue;
+   color: $white;
    text-decoration: none;
    display: flex;
    justify-content: center;
@@ -68,6 +70,23 @@
    font-weight: bold;
    border-radius: 30px;
 }
+
+// LOGIN PAGE
+.btn-login-page {
+   width: 180px;
+   height: 50px;
+   background-color: $dark-blue;
+   color: $white;
+   text-decoration: none;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin: 10px;
+   font-weight: bold;
+   border-radius: 30px;
+}
+
+
 .btn-gb-2 {
    padding: 30px 40px;
    background-color: $green-blue;
