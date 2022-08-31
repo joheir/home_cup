@@ -1,11 +1,12 @@
 <h1>TaskTemplates</h1>
 
-<div><%= render "shared/guidelines" %>
-</div>
-<%= render "form", task: @task %>
+<div><%= render "shared/guidelines" %></div>
+<%= render "form", task_template: @task_template %>
 
 <ul>
-  <% @tasks.each do |task| %>
+  <% @task_templates.each do |task| %>
        <li><%= task.title %></li>
   <% end %>
 </ul>
+
+<%= button_to "Assign tasks!", create_multiple_profile_tasks_path, method: :post %>
