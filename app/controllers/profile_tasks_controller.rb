@@ -46,12 +46,6 @@ class ProfileTasksController < ApplicationController
     @profile_task.profile = @profile
     @profile_task.toggle!(:done)
 
-    count = 0
-    @profile_tasks.each do |profile_task|
-      profile_task.done ? count += 1 : count
-    end
-
-    @profile_task.profile.progress = (count.to_f / @profile_tasks.length) * 100
     redirect_to profile_profile_task_path
   end
 
