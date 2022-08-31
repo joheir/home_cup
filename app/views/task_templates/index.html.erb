@@ -2,10 +2,10 @@
 
 <div><%= render "shared/guidelines" %>
 </div>
-<%= render "form", task: @task %>
+<%= render "form" %>
 
-<ul>
-  <% @tasks.each do |task| %>
-       <li><%= task.title %></li>
-  <% end %>
-</ul>
+<% @tasks.each do |task| %>
+    <ul>
+      <li><%= task.title %></li>
+    </ul>
+<% end %>
