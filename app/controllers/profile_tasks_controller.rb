@@ -1,6 +1,7 @@
 class ProfileTasksController < ApplicationController
   def index
     @profile_tasks = ProfileTask.where(profile_id: params[:profile_id])
+    @profile = Profile.find(params[:profile_id])
   end
 
   def new
@@ -43,12 +44,13 @@ class ProfileTasksController < ApplicationController
     @profile = Profile.find(params[:profile_id])
     @profile_task = ProfileTask.find(params[:id])
     @profile_task.profile = @profile
-
     @profile_task.toggle!(:done)
+
     redirect_to profile_profile_task_path
   end
 
   private
+
   def profile_task_params
     params.require(:profile_task).permit(:title, :description, :min_age, :weekday)
   end
