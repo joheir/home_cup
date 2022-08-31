@@ -6,12 +6,14 @@
   <div class="profile-pictures">
     <div class="grid">
       <% @profiles.each do |profile| %>
+      <%= link_to profile_path(profile) do %>
         <div class="profile-avatar">
           <%= cl_image_tag profile.picture.key, height: 200, width: 200, crop: :fill, class: "big-avatar" %>
         </div>
         <div class="profile-name">
           <%= profile.name %>
         </div>
+        <% end %>
       <% end %>
     </div>
   </div>

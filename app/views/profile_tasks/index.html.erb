@@ -1,13 +1,7 @@
 <div class="wrapper">
   <div class="header">
     <p>Make a text that updates</p>
-    <% count = 0 %>
-    <% @profile_tasks.each do |profile_task| %>
-      <% if profile_task.done? %>
-        <% count += 1 %>
-        <% end %>
-      <% end %>
-     <%= (count.to_f/@profile_tasks.length)*100 %>
+    <p>The progress<%= @profile.progress %></p>
 
 
   </div>
