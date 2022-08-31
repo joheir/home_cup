@@ -21,9 +21,9 @@ class TaskTemplatesController < ApplicationController
     @task.account = current_account
 
     respond_to do |format|
-      if @task.save!
-        format.html { redirect_to task_url(@task), notice: "Task was successfully created." }
-        format.json { render :show, status: :created, location: @task }
+      if @task.save
+        format.html { redirect_to task_templates_path, notice: "Task was successfully created." }
+        format.json { render :show, status: :created, location: task_templates_path}
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @task.errors, status: :unprocessable_entity }
@@ -33,15 +33,6 @@ class TaskTemplatesController < ApplicationController
 
 
   def update
-    respond_to do |format|
-      if @task.update(task_params)
-        format.html { redirect_to task_url(@task), notice: "Task was successfully updated." }
-        format.json { render :show, status: :ok, location: @task }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @task.errors, status: :unprocessable_entity }
-      end
-    end
   end
 
   def destroy
