@@ -1,4 +1,4 @@
-<%= simple_form_for(@task, html: {"data-turbo": false} ) do |f| %>
+<%= simple_form_for(@task_template, html: {"data-turbo": false} ) do |f| %>
     <%= f.input :title %>
     <%= f.input :description %>
     <%= f.input :min_age %>
@@ -6,6 +6,6 @@
 
 
     <div class="form-actions">
-      <%= f.button :submit, 'Assign a task!' %>
+      <%= f.button :submit, 'Submit!' %>
     </div>
   <% end %>
