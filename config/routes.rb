@@ -8,6 +8,11 @@ Rails.application.routes.draw do
   resources :profiles
   resources :task_templates
   resources :meals, only: %i[index destroy]
+  resources :profile_tasks, only: %i[index update edit destroy] do
+    collection do
+      post 'create_multiple'
+    end
+  end
   # Defines the root path route ("/")
   # root "articles#index"
 end
