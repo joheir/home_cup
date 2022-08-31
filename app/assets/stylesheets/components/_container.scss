@@ -9,3 +9,20 @@
     justify-content: space-between;
     margin-top: 20px;
 }
+
+.account-page {
+  background-image: url("blob-1.png");
+  background-repeat: no-repeat;
+}
+
+.blob-2 {
+  background-image: url("blob-2.png");
+}
+
+.account-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: -100px;
+}
