@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_31_145102) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_31_150648) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -65,6 +65,25 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_31_145102) do
     t.index ["account_id"], name: "index_meals_on_account_id"
   end
 
+  create_table "packings", force: :cascade do |t|
+    t.string "name"
+    t.string "item1"
+    t.string "item2"
+    t.string "item3"
+    t.string "item4"
+    t.string "item5"
+    t.string "item6"
+    t.string "item7"
+    t.string "item8"
+    t.string "item9"
+    t.string "item10"
+    t.string "color"
+    t.bigint "profile_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["profile_id"], name: "index_packings_on_profile_id"
+  end
+
   create_table "profile_tasks", force: :cascade do |t|
     t.bigint "profile_id", null: false
     t.boolean "done", default: false
@@ -100,6 +119,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_31_145102) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "meals", "accounts"
+  add_foreign_key "packings", "profiles"
   add_foreign_key "profile_tasks", "profiles"
   add_foreign_key "profile_tasks", "task_templates"
   add_foreign_key "profiles", "accounts"

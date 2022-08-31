@@ -1,6 +1,4 @@
 .btns {
-    margin-top: 100px;
-    margin-left: 50px;
 }
 
 // ORANGE BUTTON
@@ -57,14 +55,38 @@
 .btn-gb {
    margin-top: 100px;
 }
-.btn-gb-1 {
-   padding: 30px 40px;
-   background-color: $green-blue;
+
+// WELCOME PAGE
+.btn-welcome {
+   width: 180px;
+   height: 50px;
+   background-color: $dark-blue;
    color: $white;
    text-decoration: none;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin: 10px;
    font-weight: bold;
-   box-shadow: 0px 0px 5px rgba(231, 143, 27, 0.3);
+   border-radius: 30px;
 }
+
+// LOGIN PAGE
+.btn-login-page {
+   width: 180px;
+   height: 50px;
+   background-color: $dark-blue;
+   color: $white;
+   text-decoration: none;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin: 10px;
+   font-weight: bold;
+   border-radius: 30px;
+}
+
+
 .btn-gb-2 {
    padding: 30px 40px;
    background-color: $green-blue;

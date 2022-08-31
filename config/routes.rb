@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :meals, only: %i[index destroy]
   resources :profiles do
     resources :profile_tasks, only: %i[index update edit]
+    resources :packings, only: %i[show new create edit update destroy]
   end
   resources :profile_tasks, only: %i[destroy] do
     collection do

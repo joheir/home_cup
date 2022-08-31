@@ -2,6 +2,7 @@ class Profile < ApplicationRecord
   belongs_to :account
   validates :name, :admin, :age, :picture, presence: true
   has_one_attached :picture
+  has_many :packings
 
   def progress
     profile_tasks = ProfileTask.where(profile_id: id)
