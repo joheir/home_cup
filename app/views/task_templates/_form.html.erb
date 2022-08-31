@@ -2,7 +2,9 @@
     <%= f.input :title %>
     <%= f.input :description %>
     <%= f.input :min_age %>
-    <%= f.input :weekday %>
+    <%= simple_fields_for :weekdays do |s| %>
+      <%= s.input :selected, as: :check_boxes, collection: ['Monday','Tuesday','Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'] %>
+    <% end %>
 
 
     <div class="form-actions">
