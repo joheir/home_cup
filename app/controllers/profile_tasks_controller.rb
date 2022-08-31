@@ -1,6 +1,9 @@
 class ProfileTasksController < ApplicationController
-  def new
+  def index
+    @profile_tasks = ProfileTask.where(profile_id: params[:profile_id])
+  end
 
+  def new
 
   end
 
@@ -20,10 +23,6 @@ class ProfileTasksController < ApplicationController
   #   @profile_task = ProfileTask.new
   #   @task = TaskTemplate.new(task_params)
   #   @task.account = current_account
-
-
-
-
   #   respond_to do |format|
   #     if @task.save!
   #       format.html { redirect_to task_url(@task), notice: "Task was successfully created." }
@@ -35,13 +34,18 @@ class ProfileTasksController < ApplicationController
   #   end
   # end
 
-  def index
-  end
-
   def edit
+    @profile_task = ProfileTask.find(params[:id])
+    @profile = Profile.find(params[:profile_id])
   end
 
   def update
+    @profile = Profile.find(params[:profile_id])
+    @profile_task = ProfileTask.find(params[:id])
+    @profile_task.profile = @profile
+
+    @profile_task.toggle!(:done)
+    redirect_to profile_profile_task_path
   end
 
   private

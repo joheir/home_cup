@@ -1,2 +1,34 @@
-<h1>ProfileTasks#index</h1>
-<p>Find me in app/views/profile_tasks/index.html.erb</p>
+<div class="wrapper">
+  <div class="header">
+    <p>Make a text that updates</p>
+    <% count = 0 %>
+    <% @profile_tasks.each do |profile_task| %>
+      <% if profile_task.done? %>
+        <% count += 1 %>
+        <% end %>
+      <% end %>
+     <%= (count.to_f/@profile_tasks.length)*100 %>
+
+
+  </div>
+  <div class="task-overview">
+    <ul>
+
+      <% @profile_tasks.each do |profile_task| %>
+        <li>
+          <%= profile_task.task_template.title %>
+          <%= profile_task.task_template.description %>
+          <%= button_to profile_profile_task_path(profile_task.profile, profile_task), method: :put, class: "check-box-buton" do %>
+            <% if profile_task.done? %>
+              <i class="fa-solid fa-square"></i>
+              <%= profile_task.done %>
+            <% else %>
+              <i class="fa-regular fa-square"></i>
+              <%= profile_task.done %>
+            <% end %>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
