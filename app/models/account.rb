@@ -5,4 +5,5 @@ class Account < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :profiles
   has_one :task_template
+  has_many :meals
 end
