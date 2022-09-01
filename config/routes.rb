@@ -6,10 +6,10 @@ Rails.application.routes.draw do
 
   resources :profiles do
     resources :profile_tasks, only: %i[index update edit]
-    resources :packings, only: %i[show new create edit update destroy]
+    resources :packings
     resources :meals, only: %i[index destroy]
-    resources :task_templates
   end
+  resources :task_templates, only: %i[create index update destroy]
   resources :profile_tasks, only: %i[destroy] do
     collection do
       post 'create_multiple'
