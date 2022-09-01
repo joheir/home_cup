@@ -5,6 +5,7 @@
   def index
     @task_templates = TaskTemplate.all
     @task_template = TaskTemplate.new
+    @profile = Profile.find(params[:profile_id])
   end
 
   def show
