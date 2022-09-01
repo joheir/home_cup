@@ -1,12 +1,12 @@
 <div class="navbar-wrapper">
   <ul class="u-list">
-    <%= link_to '#' do %>
+    <%= link_to profile_path(@profile) do %>
       <li><i class="fa fa-home fa-2x" aria-hidden="true"></i></li>
     <% end %>
-        <%= link_to '#' do %>
+        <%= link_to profile_profile_tasks_path(@profile) do %>
       <li><i class="fa-solid fa-square-check fa-2x" aria-hidden="true"></i></li>
     <% end %>
-        <%= link_to '#' do %>
+        <%= link_to profile_meals_path(@profile) do %>
       <li><i class="fa-solid fa-burger fa-2x" aria-hidden="true"></i></li>
     <% end %>
         <%= link_to '#' do %>
