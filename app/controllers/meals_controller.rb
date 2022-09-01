@@ -1,6 +1,7 @@
 class MealsController < ApplicationController
   def index
     @meals = Meal.all
+    @profile = Profile.find(params[:profile_id])
   end
 
   def destroy
