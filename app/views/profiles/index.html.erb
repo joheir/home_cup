@@ -4,18 +4,19 @@
     <h2>Here is your team! ⭐️</h2>
   </div>
 
-
 <div class="profile-pictures">
-    <% @profiles.each do |profile| %>
-     <div class="profile-wrapper">
-      <div class="profile-avatar">
-        <%= cl_image_tag profile.picture.key, height: 120, width: 120, crop: :fill, class: "big-avatar" %>
-      </div>
-      <div class="profile-name">
-        <%= profile.name %>
-      </div>
-    </div>
-    <% end %>
+      <% @profiles.each do |profile| %>
+      <%= link_to profile_path(profile) do %>
+        <div class="profile-wrapper">
+        <div class="profile-avatar">
+          <%= cl_image_tag profile.picture.key, height: 120, width: 120, crop: :fill, class: "big-avatar" %>
+        </div>
+        <div class="profile-name">
+          <%= profile.name %>
+        </div>
+        </div>
+        <% end %>
+      <% end %>
 </div>
 <div class="add-btn-wrapper">
   <%= link_to "Add a team member!", new_profile_path, class: "add-btn" %>
