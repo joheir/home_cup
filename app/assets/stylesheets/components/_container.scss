@@ -31,24 +31,79 @@
   color: $dark-blue;
 }
 
+// FORGOT PASSWORD PAGE
 .forgot-pass {
   display: flex;
   justify-content: center;
   color: $dark-blue;
   text-decoration: none;
+  margin-top: 100px;
+}
+
+.forgot-text {
+  text-align: center;
+  margin-top: 200px;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: $dark-blue;
 }
 
 // LOGIN PAGE
 .login-wrapper {
   margin-top: 100px;
-  width: 95%;
+  width: 100%;
   margin: 0 auto;
 }
 
 .login-text {
   text-align: center;
-  margin-top: 100px;
+  margin-top: 120px;
   font-size: 2.5rem;
   font-weight: bold;
   color: $dark-blue;
+}
+
+.form-actions {
+  display: flex;
+}
+
+// SIGNUP PAGE
+.signup-wrapper {
+  margin-top: 100px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.signup-text {
+  text-align: center;
+  margin-top: 70px;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: $dark-blue;
+}
+.meals-text {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: $dark-blue;
+}
+
+.profile-pictures {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.profile-avatar {
+  margin: 20px;
+  display: flex;
+  border: 5px solid $dark-blue;
+  border-radius: 50%;
+}
+
+.profile-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

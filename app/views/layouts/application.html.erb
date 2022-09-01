@@ -13,10 +13,10 @@
   <body class="account-page">
 
   <%= render "shared/flashes" %>
-    <!--<div class="guide-lines">-->
+    <div class="guide-lines">
       <%= render "shared/profile_avatar" unless @disable_log_out %>
       <%= yield %>
       <%#= render "shared/navbar" unless @disable_nav %>
-    <!--</div>-->
+    </div>
   </body>
 </html>
