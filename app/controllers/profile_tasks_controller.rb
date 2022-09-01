@@ -1,7 +1,8 @@
 class ProfileTasksController < ApplicationController
+  before_action :set_profile
+
   def index
     @profile_tasks = ProfileTask.where(profile_id: params[:profile_id])
-    @profile = Profile.find(params[:profile_id])
   end
 
   def new
@@ -37,11 +38,9 @@ class ProfileTasksController < ApplicationController
 
   def edit
     @profile_task = ProfileTask.find(params[:id])
-    @profile = Profile.find(params[:profile_id])
   end
 
   def update
-    @profile = Profile.find(params[:profile_id])
     @profile_task = ProfileTask.find(params[:id])
     @profile_task.profile = @profile
     @profile_task.toggle!(:done)
@@ -53,5 +52,9 @@ class ProfileTasksController < ApplicationController
 
   def profile_task_params
     params.require(:profile_task).permit(:title, :description, :min_age, :weekday)
+  end
+
+  def set_profile
+    @profile = Profile.find(params[:profile_id])
   end
 end

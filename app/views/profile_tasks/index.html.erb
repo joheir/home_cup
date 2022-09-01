@@ -7,8 +7,8 @@
   </div>
   <div class="task-overview">
     <ul>
-
       <% @profile_tasks.each do |profile_task| %>
+        <h3> <%= profile_task.task_template.weekday %></h3>
         <li>
           <%= profile_task.task_template.title %>
           <%= profile_task.task_template.description %>
@@ -24,5 +24,13 @@
         </li>
       <% end %>
     </ul>
+
+    <div class="carousel-item">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>...</h5>
+        <p>...</p>
+      </div>
+    </div>
+
   </div>
 </div>
