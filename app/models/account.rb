@@ -4,6 +4,6 @@ class Account < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :profiles
-  has_one :task_template
+  has_many :task_templates
   has_many :meals
 end
