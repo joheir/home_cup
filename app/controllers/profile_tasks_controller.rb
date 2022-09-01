@@ -1,5 +1,5 @@
 class ProfileTasksController < ApplicationController
-  before_action :set_profile
+  before_action :set_profile, only: %i[index new edit update]
 
   def index
     @profile_tasks = ProfileTask.where(profile_id: params[:profile_id])

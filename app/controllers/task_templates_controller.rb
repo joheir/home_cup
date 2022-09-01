@@ -1,21 +1,10 @@
  class TaskTemplatesController < ApplicationController
   before_action :set_task_template, only: %i[ show edit update destroy ]
-  before_action :set_profile
 
   def index
+    @disable_nav = true
     @task_templates = TaskTemplate.all
     @task_template = TaskTemplate.new
-    @profile = Profile.find(params[:profile_id])
-  end
-
-  def show
-  end
-
-  def new
-  end
-
-
-  def edit
   end
 
   def create
@@ -29,16 +18,7 @@
         @task_template.save!
       end
     end
-    redirect_to profile_task_templates_path(@profile)
-    # respond_to do |format|
-    #   if @task_template.save
-    #     format.html { redirect_to task_templates_path, notice: "Task was successfully created." }
-    #     format.json { render :show, status: :created, location: task_templates_path}
-    #   else
-    #     format.html { render :new, status: :unprocessable_entity }
-    #     format.json { render json: @task_template.errors, status: :unprocessable_entity }
-    #   end
-    # end
+    redirect_to task_templates_path
   end
 
 
@@ -70,10 +50,6 @@
 
     def task_template_params
       params.require(:task_template).permit(:title, :description, :min_age)
-    end
-
-    def set_profile
-      @profile = Profile.find(params[:profile_id])
     end
 
 end
