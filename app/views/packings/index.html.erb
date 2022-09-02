@@ -2,11 +2,13 @@
 
 
 <div class="bags-wrapper">
+
   <% @packings.each do |packing| %>
     <a href="<%= profile_packings_path(packing_id: packing.id, profile_id: @profile.id) %>">
         <i class="fa-solid fa-briefcase fa-2x" style="color: #FFA963"></i>
         <p  style="color: #4EB9B3"> <%= packing.name %> </p>
   <% end %>
+
 </div>
 
 <% if params[:packing_id].present? %>
@@ -16,6 +18,8 @@
           <h3><%= packing.name.capitalize %></h3>
           <%= show_all_packing_items(packing) %>
         </div>
+
+    <% end %>
   </div>
   <% else %>
       <p>Please click on the bag<p>
