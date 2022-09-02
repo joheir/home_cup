@@ -2,7 +2,7 @@ class ProfilesController < ApplicationController
   def index
     @disable_log_out = true
     @disable_nav = true
-    @profiles = Profile.all
+    @profiles = Profile.where(account: current_account)
   end
 
   def show
