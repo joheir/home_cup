@@ -19,6 +19,7 @@ class ProfileTasksController < ApplicationController
       @p_task.profile = profile
       @p_task.save!
     end
+    # redirect_back_or_to(root_path)
   end
 
   # def create

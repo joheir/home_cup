@@ -3,8 +3,11 @@
     <p>Make a text that updates</p>
     <p>Your progress <%= @profile.progress %>%</p>
 
-
+  <% if @profile.admin? %>
+      <%= link_to "Add a household task!", task_templates_path %>
+  <% end %>
   </div>
+
   <div class="task-overview">
     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
@@ -58,7 +61,5 @@
           <span class="visually-hidden">Next</span>
         </button>
     </div>
-
-
   </div>
 </div>
