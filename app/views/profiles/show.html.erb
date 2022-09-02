@@ -11,7 +11,6 @@
               </div>
           <% end %>
         </div>
-      </div>
       <div class="total-progress">
         <%= link_to "#" do %>
             <div class="container-progress">
@@ -21,6 +20,7 @@
             </div>
         <% end %>
       </div>
+      </div>
     </div>
 </div>
   <hr>
@@ -28,12 +28,9 @@
       <h3>What are we eating?</h3>
       <%= link_to profile_meals_path(@profile) do %>
       <div class="meal-card-dash">
-        <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Zm9vZHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"/>
+          <h2 class="noodles-btn">Noodles</h2>
+        <img class="img-p" src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Zm9vZHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"/>
         <div class="meal-card-infos">
-          <div>
-            <h2>Noodles</h2>
-            <p>Short description here!</p>
-          </div>
         </div>
       <% end %>
     </div>
