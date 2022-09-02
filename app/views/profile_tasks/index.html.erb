@@ -8,31 +8,44 @@
   <div class="task-overview">
     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
-        <div class="carousel-item active">
+        <div class="carousel-item active text-center">
           <h1>All</h1>
           <ul>
             <% @profile_tasks.each do |profile_task| %>
-              <li>
+              <div class= "overview-tasks">
                 <%= profile_task.task_template.title %>
                 <%= profile_task.task_template.description %>
-                <%= button_to profile_profile_task_path(profile_task.profile, profile_task), method: :put, class: "check-box-buton" do %>
+                <%= button_to profile_profile_task_path(profile_task.profile, profile_task), remote: true, method: :put, class: "check-box-buton" do %>
                   <% if profile_task.done? %>
                     <i class="fa-solid fa-square"></i>
-                    <%= profile_task.done %>
                   <% else %>
                     <i class="fa-regular fa-square"></i>
-                    <%= profile_task.done %>
                   <% end %>
                 <% end %>
-              </li>
+              </div>
             <% end %>
           </ul>
         </div>
 
         <% ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"].each do |day|  %>
-          <div class="carousel-item">
+          <div class="carousel-item text-center">
             <h1><%= day %></h1>
-            <p></p>
+            <ul>
+            <% @profile_tasks.each do |profile_task| %>
+              <% if profile_task.task_template.weekday == day %>
+                <div class= "overview-tasks">
+                  <%= profile_task.task_template.title %>
+                  <%= profile_task.task_template.description %>
+                  <%= button_to profile_profile_task_path(profile_task.profile, profile_task), remote: true, method: :put, class: "check-box-buton" do %>
+                    <% if profile_task.done? %>
+                      <i class="fa-solid fa-square"></i>
+                    <% else %>
+                      <i class="fa-regular fa-square"></i>
+                    <% end %>
+                  <% end %>
+                </div>
+              <% end %>
+            <% end %>
           </div>
         <% end %>
       </div>
