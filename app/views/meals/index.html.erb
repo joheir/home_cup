@@ -1,11 +1,14 @@
-<h2 class="meals-text">All meals:</h2>
-  <ul class="recipe-list">
-    <% @meals.each do |meal| %>
-      <div>
-        <div>
-            <%= image_tag(meal.picture_url, class:"img") %>
-        </div>
-        <p><%= meal.name %></p>
+<h2 class="meals-text">Meal Options</h2>
+
+<div class="recipe-list">
+  <% @meals.each do |meal| %>
+      <div class="meal-cards">
+        <%= image_tag(meal.picture_url, class:"img") %>
       </div>
-    <% end %>
-  </ul>
+      <div class="meal-card-info">
+        <div>
+          <p><%= meal.name %><p>
+        </div>
+      </div>
+  <% end %>
+</div>

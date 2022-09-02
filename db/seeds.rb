@@ -29,4 +29,6 @@ json_recipes.each do |recipe|
    end
 end
 
-Packing.create(name: "school", profile: Profile.first, item1: "pen", item2: "pencil", item3: "paper")
+Packing.create(name: "School", profile: Profile.first, item1: "pen", item2: "pencil", item3: "math book", item4: "notebook")
+Packing.create(name: "Guitar", profile: Profile.first, item1: "guitar", item2: "pencil", item3: "notebook", item3: "sheet music")
+Packing.create(name: "Tennis", profile: Profile.first, item1: "tennis racket", item2: "tennis shoes", item3: "tennis ball", item3: "towel", item3: "shorts")

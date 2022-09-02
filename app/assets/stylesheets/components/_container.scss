@@ -5,9 +5,34 @@
 
 .recipe-list {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
   margin-top: 20px;
+}
+
+.meal-cards {
+  width: 200px;
+  border-radius: 10px;
+
+  .img {
+    height: 150px;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .p {
+    font-size: 12px;
+    opacity: .7;
+    margin: 0;
+  }
+
+  .meal-card-info {
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    position: relative;
+  }
 }
 
 .account-page {

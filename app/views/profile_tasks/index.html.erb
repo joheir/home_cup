@@ -15,11 +15,6 @@
     <% end %>
 
     <p>Your progress <%= @profile.progress %>%</p>
-
-
-  <% if @profile.admin? %>
-      <%= link_to "Add a household task!", task_templates_path %>
-  <% end %>
   </div>
 
   <div class="task-overview">
@@ -75,5 +70,14 @@
           <span class="visually-hidden">Next</span>
         </button>
     </div>
+  </div>
+
+
+</div>
+
+<div class="btndiv">
+  <% if @profile.admin? %>
+      <%= link_to "Add a household task!", task_templates_path, class: "btn-orange-4 "%>
+  <% end %>
   </div>
 </div>

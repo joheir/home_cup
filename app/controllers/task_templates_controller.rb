@@ -38,7 +38,7 @@
     @task_template.destroy
 
     respond_to do |format|
-      format.html { redirect_to profile_task_templates_url(@profile), notice: "Task was successfully destroyed." }
+      format.html { redirect_to task_templates_url, notice: "Task was successfully destroyed." }
       format.json { head :no_content }
     end
   end
