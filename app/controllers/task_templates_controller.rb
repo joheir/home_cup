@@ -18,7 +18,6 @@
         @task_template.save!
       end
     end
-    redirect_to task_templates_path
   end
 
 

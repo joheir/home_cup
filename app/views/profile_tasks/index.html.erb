@@ -3,6 +3,11 @@
     <p>Make a text that updates</p>
     <p>Your progress <%= @profile.progress %>%</p>
 
+<% if @profile.admin? %>
+    <%= link_to "Add a household task!", task_templates_path %>
+  <% end %>
+
+
 
   </div>
   <div class="task-overview">
@@ -15,10 +20,8 @@
           <%= button_to profile_profile_task_path(profile_task.profile, profile_task), method: :put, class: "check-box-buton" do %>
             <% if profile_task.done? %>
               <i class="fa-solid fa-square"></i>
-              <%= profile_task.done %>
             <% else %>
               <i class="fa-regular fa-square"></i>
-              <%= profile_task.done %>
             <% end %>
           <% end %>
         </li>
@@ -31,6 +34,6 @@
         <p>...</p>
       </div>
     </div>
-
   </div>
+
 </div>
