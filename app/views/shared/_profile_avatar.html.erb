@@ -1,3 +1,5 @@
 <% if account_signed_in? %>
- <%= button_to "Log out", destroy_account_session_path, class: "dropdown-item", method: :delete, form: {"data-turbo": false} %>
+ <%= button_to destroy_account_session_path, class: "dropdown-item", method: :delete, form: {"data-turbo": false} do %>
+  <i class="fa-solid fa-arrow-right-from-bracket"></i>
+ <% end %>
 <% end %>

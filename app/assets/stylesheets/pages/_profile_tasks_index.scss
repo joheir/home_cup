@@ -1,0 +1,15 @@
+.overview-tasks {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+
+  .check-box-buton {
+    background-color: transparent;
+  }
+}
+
+.overview-tasks i {
+  background-color: transparent;
+  color: $dark_blue;
+}

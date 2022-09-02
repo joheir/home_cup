@@ -28,3 +28,5 @@ json_recipes.each do |recipe|
       Meal.create!(account_id: 1, name: recipe['name'], url: recipe["originalURL"], picture_url: recipe["imageURL"])
    end
 end
+
+Packing.create(name: "school", profile: Profile.first, item1: "pen", item2: "pencil", item3: "paper")
