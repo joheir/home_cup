@@ -1,33 +1,28 @@
 <div class="wrapper">
   <div class="progressoverview">
       <h3>Progress</h3>
-    <%= link_to profile_profile_tasks_path(@profile) do %>
-        <div class="container-progress">
-          <div class="circular-progress">
-            <div class="value value-container"><%= @profile.progress %></div>
-          </div>
+      <div class="progresses">
+        <div class="personal-progress">
+          <%= link_to profile_profile_tasks_path(@profile) do %>
+              <div class="container-progress">
+                <div class="circular-progress">
+                  <div class="value value-container"><%= @profile.progress %></div>
+                </div>
+              </div>
+          <% end %>
         </div>
-    <% end %>
 
-    <%#ß= debug @profile.progress %>
+      <div class="total-progress">
+        <%= link_to "#" do %>
+            <div class="container-progress">
+              <div class="circular-progress">
+                <div class="value value-container"> <%= current_account.done_tasks_count %></div>
+              </div>
+            </div>
+        <% end %>
+      </div>
+    </div>
 
-    <% count = 0 %>
-    <% current_account.profiles.each do |profile| %>
-      <% profile.profile_tasks.each do |task| %>
-        <% task.done? ? count += 1 : count %>
-      <% end %>
-    <% end %>
-
-
-     <%= link_to "#" do %>
-        <div class="container-progress">
-          <div class="circular-progress">
-            <div class="value value-container"><%= (count.to_f/current_account.task_templates.count) * 100%></div>
-          </div>
-        </div>
-    <% end %>
-
-    <%#= debug (count.to_f/current_account.task_templates.count) * 100 %>
   </div>
   <hr>
     <div class="meals">
