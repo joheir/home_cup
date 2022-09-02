@@ -19,6 +19,7 @@ class ProfilesController < ApplicationController
     @profile = Profile.new(profile_params)
     @profile.account = current_account
     @profile.save
+
     redirect_to profiles_path
   end
 
