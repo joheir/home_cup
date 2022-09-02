@@ -82,3 +82,4 @@ group :test do
 end
 
 gem "devise"
+gem 'turbolinks', '~> 5.2.0'

@@ -10,29 +10,35 @@ export default class extends Controller {
 
 let progressBars = document.querySelectorAll(".circular-progress");
 let valueContainers = document.querySelectorAll(".value-container");
-// let temp = document.querySelectorAll(".value");
 
 let temps = document.querySelectorAll(".value");
-let i = 0;
-temps.forEach((temp) => {
-  let progressValue = 0;
-  let progressEndValue = parseInt(temp.innerText, 10);
-  let speed = 5;
 
-  let progress = setInterval(() => {
-    console.log("the values are:", {i: i, progressValue: progressValue, progressEndValue: progressEndValue})
+document.addEventListener("turbo:load", function() {
 
-    valueContainers[i].textContent = `${progressValue}%`;
-    progressBars[i].style.background = `conic-gradient(
-      #27357E ${progressValue * 3.6}deg,
-        #cadcff ${progressValue * 3.6}deg
-    )`;
+  // console.log(temps);
 
-    if (progressValue == progressEndValue) {
-      clearInterval(progress);
-      i++;
-      console.log("HELLO!", i)
+  temps.forEach((temp, i) => {
+    let progressValue = 0;
+    let progressEndValue = parseInt(temp.innerText, 10);
+    let speed = 50;
+
+    //let i = temps.values().indexOf(temp);
+
+    let progress = setInterval(() => {
+      // console.log("the values are:", {i: i, progressValue: progressValue, progressEndValue: progressEndValue})
+
+      valueContainers[i].textContent = `${progressValue}%`;
+      progressBars[i].style.background = `conic-gradient(
+        #27357E ${progressValue * 3.6}deg,
+          #cadcff ${progressValue * 3.6}deg
+      )`;
+
+      if (progressValue == progressEndValue) {
+        clearInterval(progress);
+        // i++;
+        // console.log("HELLO!", i)
+      }
       progressValue++;
-    }
-  }, speed);
-})
+    }, speed);
+  })
+});
