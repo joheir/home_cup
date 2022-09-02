@@ -15,13 +15,13 @@ let valueContainers = document.querySelectorAll(".value-container");
 let temps = document.querySelectorAll(".value");
 let i = 0;
 temps.forEach((temp) => {
-  console.log(i)
   let progressValue = 0;
-  let progressEndValue = temp.innerText;
-  let speed = 100;
+  let progressEndValue = parseInt(temp.innerText, 10);
+  let speed = 5;
 
   let progress = setInterval(() => {
-    progressValue++;
+    console.log("the values are:", {i: i, progressValue: progressValue, progressEndValue: progressEndValue})
+
     valueContainers[i].textContent = `${progressValue}%`;
     progressBars[i].style.background = `conic-gradient(
       #27357E ${progressValue * 3.6}deg,
@@ -31,7 +31,8 @@ temps.forEach((temp) => {
     if (progressValue == progressEndValue) {
       clearInterval(progress);
       i++;
-      console.log(i)
+      console.log("HELLO!", i)
+      progressValue++;
     }
   }, speed);
 })
