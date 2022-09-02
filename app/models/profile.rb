@@ -1,6 +1,6 @@
 class Profile < ApplicationRecord
   belongs_to :account
-  validates :name, :admin, :age, :picture, presence: true
+  validates :name, :age, :picture, presence: true
   has_one_attached :picture
   has_many :packings
   has_many :profile_tasks
