@@ -6,7 +6,9 @@
 <ul>
   <% @task_templates.each do |task| %>
        <li><%= task.title %></li>
+       <%= link_to 'Delete', task_template_path(task), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: 'delete-card' %>
   <% end %>
 </ul>
 
 <%= button_to "Assign tasks!", create_multiple_profile_tasks_path, method: :post %>
+<%= link_to 'See my tasks', :back %>

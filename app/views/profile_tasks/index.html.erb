@@ -3,34 +3,63 @@
     <p>Make a text that updates</p>
     <p>Your progress <%= @profile.progress %>%</p>
 
-
+  <% if @profile.admin? %>
+      <%= link_to "Add a household task!", task_templates_path %>
+  <% end %>
   </div>
+
   <div class="task-overview">
-    <ul>
-      <% @profile_tasks.each do |profile_task| %>
-        <h3> <%= profile_task.task_template.weekday %></h3>
-        <li>
-          <%= profile_task.task_template.title %>
-          <%= profile_task.task_template.description %>
-          <%= button_to profile_profile_task_path(profile_task.profile, profile_task), method: :put, class: "check-box-buton" do %>
-            <% if profile_task.done? %>
-              <i class="fa-solid fa-square"></i>
-              <%= profile_task.done %>
-            <% else %>
-              <i class="fa-regular fa-square"></i>
-              <%= profile_task.done %>
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active text-center">
+          <h1>All</h1>
+          <ul>
+            <% @profile_tasks.each do |profile_task| %>
+              <div class= "overview-tasks">
+                <%= profile_task.task_template.title %>
+                <%= profile_task.task_template.description %>
+                <%= button_to profile_profile_task_path(profile_task.profile, profile_task), remote: true, method: :put, class: "check-box-buton" do %>
+                  <% if profile_task.done? %>
+                    <i class="fa-solid fa-square"></i>
+                  <% else %>
+                    <i class="fa-regular fa-square"></i>
+                  <% end %>
+                <% end %>
+              </div>
             <% end %>
-          <% end %>
-        </li>
-      <% end %>
-    </ul>
+          </ul>
+        </div>
 
-    <div class="carousel-item">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>...</h5>
-        <p>...</p>
+        <% ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"].each do |day|  %>
+          <div class="carousel-item text-center">
+            <h1><%= day %></h1>
+            <ul>
+            <% @profile_tasks.each do |profile_task| %>
+              <% if profile_task.task_template.weekday == day %>
+                <div class= "overview-tasks">
+                  <%= profile_task.task_template.title %>
+                  <%= profile_task.task_template.description %>
+                  <%= button_to profile_profile_task_path(profile_task.profile, profile_task), remote: true, method: :put, class: "check-box-buton" do %>
+                    <% if profile_task.done? %>
+                      <i class="fa-solid fa-square"></i>
+                    <% else %>
+                      <i class="fa-regular fa-square"></i>
+                    <% end %>
+                  <% end %>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+        <% end %>
       </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
     </div>
-
   </div>
 </div>
