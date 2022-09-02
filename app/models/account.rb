@@ -11,7 +11,7 @@ class Account < ApplicationRecord
   def done_tasks_count
     return 0 if task_templates.empty?
 
-    done_tasks_total = profiles.profile_tasks.where(done: true).count
+    done_tasks_total = profile_tasks.where(done: true).count
     return 0 if done_tasks_total.zero?
 
     (done_tasks_total.to_f/task_templates.count) * 100
