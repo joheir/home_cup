@@ -11,12 +11,14 @@ class MealsController < ApplicationController
   end
 
   def vote
-    @meals = Meal.all
-    @meals.each do |meal|
-      if 
-      current_votes = meal.votes
-      new_vote = current_votes + 1
-      meal.votes = new_vote
+    @profile = Profile.find(params[:profile_id])
+    @meal = Meal.find(params[:id])
+    if @profile.voted_for? @meal
+      @meal.unliked_by @profile
+    else
+      @meal.liked_by @profile
+    end
+    render 'like', formats: :js
   end
 
   private

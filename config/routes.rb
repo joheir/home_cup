@@ -8,8 +8,8 @@ Rails.application.routes.draw do
     resources :profile_tasks, only: %i[index update edit]
     resources :packings
     resources :meals, only: %i[index destroy] do
-      collection do
-        post 'vote'
+      member do
+        patch 'vote', to: "meals#vote"
       end
     end
   end

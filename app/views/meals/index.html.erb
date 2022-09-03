@@ -1,6 +1,6 @@
 <h2 class="meals-text">Meal Options</h2>
 
-<div class="recipe-list">
+<div class="recipe-list" data-controller="meal-cards-list">
   <% @meals.each do |meal| %>
       <div class="clickable">
         <div class="meal-cards">
@@ -11,8 +11,9 @@
             <p><%= meal.name %><p>
           </div>
         </div>
+        <div class="like-link">
+          <%= render 'meals/like_link', meal: meal %>
+        </div>
       </div>
   <% end %>
 </div>
-
-
