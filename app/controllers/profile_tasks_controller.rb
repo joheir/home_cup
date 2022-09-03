@@ -10,6 +10,7 @@ class ProfileTasksController < ApplicationController
   end
 
   def create_multiple
+    ProfileTask.destroy_all
     @template_tasks = TaskTemplate.all
 
     @template_tasks.each do |t_task|
