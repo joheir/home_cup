@@ -2,13 +2,17 @@
 
 <div class="recipe-list">
   <% @meals.each do |meal| %>
-      <div class="meal-cards">
-        <%= image_tag(meal.picture_url, class:"img") %>
-      </div>
-      <div class="meal-card-info">
-        <div>
-          <p><%= meal.name %><p>
+      <div class="clickable">
+        <div class="meal-cards">
+          <%= image_tag(meal.picture_url, class:"img") %>
+        </div>
+        <div class="meal-card-info">
+          <div>
+            <p><%= meal.name %><p>
+          </div>
         </div>
       </div>
   <% end %>
 </div>
+
+

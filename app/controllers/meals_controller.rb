@@ -10,6 +10,15 @@ class MealsController < ApplicationController
     @meal.destroy
   end
 
+  def vote
+    @meals = Meal.all
+    @meals.each do |meal|
+      if 
+      current_votes = meal.votes
+      new_vote = current_votes + 1
+      meal.votes = new_vote
+  end
+
   private
 
   def set_profile

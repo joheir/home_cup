@@ -1,20 +1,27 @@
 <div class="wrapper">
-  <div class="header">
-    <% if @profile.progress < 10 %>
-      <p>You have some work to do! 💪</p>
-    <% elsif @profile.progress < 30 %>
-      <p>Good start, keep up the good work! 👌</p>
-    <% elsif @profile.progress < 50 %>
-      <p>Every task counts! Well done! 👏</p>
-    <% elsif @profile.progress < 70 %>
-      <p>Very good, you are so close to reaching your goal! 👏</p>
-    <% elsif @profile.progress < 90 %>
-      <p>Almost there! ⭐️</p>
-    <% else @profile.progress == 100 %>
-      <p>Congratulations! You did it! 🏆</p>
-    <% end %>
-
-    <p>Your progress <%= @profile.progress %>%</p>
+  <div class="header-profile">
+  <div class="text-in-header">
+      <% if @profile.progress < 10 %>
+        <p>You have some <br> work to do! 💪</p>
+      <% elsif @profile.progress < 30 %>
+        <p>Good start!<br> Keep up the good work! 👌</p>
+      <% elsif @profile.progress < 50 %>
+        <p>Every task counts!<br> Well done! 👏</p>
+      <% elsif @profile.progress < 70 %>
+        <p>Very good!<br> You are so close to reaching your goal! 👏</p>
+      <% elsif @profile.progress < 90 %>
+        <p>Almost there! ⭐️</p>
+      <% else @profile.progress == 100 %>
+        <p>Congratulations!<br> You did it! 🏆</p>
+      <% end %>
+    </div>
+    <div class="progress-in-header">
+      <div class="container-progress">
+        <div class="circular-progress">
+          <div class="value value-container"><%= @profile.progress %></div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div class="task-overview">
