@@ -1,8 +1,8 @@
 class PackingsController < ApplicationController
  before_action :set_profile
+
   def index
     @packings = Packing.all
-    @profile = Profile.find(params[:profile_id])
   end
 
   def show
