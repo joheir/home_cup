@@ -13,7 +13,7 @@
   <body class="account-page">
     <%= render "shared/flashes" %>
     <div class="guide-lines">
-      <%= render "shared/profile_avatar" unless @disable_log_out %>
+      <%= render "shared/profile_avatar" if account_signed_in? %>
       <%= yield %>
     </div>
       <%= render "shared/navbar" unless @disable_nav %>
