@@ -4,6 +4,7 @@ class Profile < ApplicationRecord
   has_one_attached :picture
   has_many :packings
   has_many :profile_tasks
+  acts_as_voter
 
   def progress
     return 0 if profile_tasks.empty?

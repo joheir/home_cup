@@ -10,14 +10,17 @@ class ProfileTasksController < ApplicationController
   end
 
   def create_multiple
+    ProfileTask.destroy_all
     @template_tasks = TaskTemplate.all
 
     @template_tasks.each do |t_task|
       @p_task = ProfileTask.new
       @p_task.task_template_id = t_task.id
       profile = Profile.order(Arel.sql('random()')).first
-      @p_task.profile = profile
-      @p_task.save!
+      if profile.id <= t_task.min_age
+        @p_task.profile = profile
+        @p_task.save!
+      end
     end
     # redirect_back_or_to(root_path)
   end

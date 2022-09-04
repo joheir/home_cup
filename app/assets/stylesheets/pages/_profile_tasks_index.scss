@@ -13,3 +13,14 @@
   background-color: transparent;
   color: $dark_blue;
 }
+
+.header-profile {
+  display: flex;
+  justify-content: space-between;
+
+  .text-in-header{
+    padding-left: 50px;
+    padding-top: 35px;
+    text-align: center;
+  }
+}
