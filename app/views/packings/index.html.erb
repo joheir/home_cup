@@ -14,11 +14,11 @@
 <% if params[:packing_id].present? %>
   <% packing = Packing.find(params[:packing_id]) %>
   <div id="content">
-    <div class="bags">
-      <h3><%= packing.name.capitalize %></h3>
-      <%= show_all_packing_items(packing) %>
-    </div>
-      </div>
+        <div class="bags">
+          <h3><%= packing.name.capitalize %></h3>
+          <%= show_all_packing_items(packing) %>
+        </div>
+  </div>
   <% else %>
       <p>Please click on the bag<p>
 <% end %>

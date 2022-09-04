@@ -1,0 +1,3 @@
+<% vote_text = @profile&.voted_for?(meal) ? "Unvote" : "Vote" %>
+
+<%= link_to vote_text, vote_profile_meal_path(@profile, meal), data: { 'turbo-method': :patch }, remote: :true, class: 'like-post' %>
