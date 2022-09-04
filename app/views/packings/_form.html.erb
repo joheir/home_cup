@@ -1,14 +1,34 @@
 <%= simple_form_for [@profile, @packing] do |f| %>
-  <%= f.input :name %>
-  <%= f.input :item1 %>
-  <%= f.input :item2 %>
-  <%= f.input :item3 %>
-  <%= f.input :item4 %>
-  <%= f.input :item5 %>
-  <%= f.input :item6 %>
-  <%= f.input :item7 %>
-  <%= f.input :item8 %>
-  <%= f.input :item9 %>
-  <%= f.input :item10 %>
+  <%= f.input :name%>
+  <div class="active">
+    <%= f.input :item1 %>
+  </div>
+  <div class="d-none">
+    <%= f.input :item2, class: "d-none" %>
+  </div>
+  <div class="d-none">
+    <%= f.input :item3, class: "d-none" %>
+  </div>
+  <div class="d-none">
+    <%= f.input :item4, class: "d-none" %>
+  </div>
+  <div class="d-none">
+    <%= f.input :item5, class: "d-none" %>
+  </div>
+  <div class="d-none">
+    <%= f.input :item6, class: "d-none" %>
+  </div>
+  <div class="d-none">
+    <%= f.input :item7, class: "d-none" %>
+  </div>
+  <div class="d-none">
+    <%= f.input :item8, class: "d-none" %>
+  </div>
+  <div class="d-none">
+    <%= f.input :item9, class: "d-none" %>
+  </div>
+  <div class="d-none">
+    <%= f.input :item10, class: "d-none" %>
+  </div>
   <%= f.submit %>
 <% end %>
