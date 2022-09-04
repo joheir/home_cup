@@ -35,6 +35,11 @@ class ProfilesController < ApplicationController
   def destroy
   end
 
+  def progresses
+    @disable_nav = true
+    @profiles = Profile.all
+  end
+
   private
 
   def profile_params
