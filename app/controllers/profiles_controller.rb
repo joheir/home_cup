@@ -2,6 +2,7 @@ class ProfilesController < ApplicationController
 
   def index
     @disable_nav = true
+    @disable_log_out = true
     @profiles = Profile.where(account: current_account)
   end
 
@@ -33,6 +34,12 @@ class ProfilesController < ApplicationController
   end
 
   def destroy
+  end
+
+  def progresses
+    @disable_nav = true
+    @disable_log_out = true
+    @profiles = Profile.all
   end
 
   private
