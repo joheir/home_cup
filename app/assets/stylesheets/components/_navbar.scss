@@ -1,6 +1,6 @@
 .navbar-wrapper {
   width: 95%;
-  height: 80px;
+  height: 60px;
   background-color: $dark-blue;
   display: flex;
   position: absolute;
@@ -24,4 +24,8 @@
 }
 .u-list a {
   color: $white;
+}
+
+.push{
+  height: 50px;
 }

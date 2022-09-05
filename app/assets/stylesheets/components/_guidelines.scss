@@ -1,9 +1,11 @@
 .guide-lines {
     width: 350px;
-    height: 780px;
+    height: 100vh;
     left: 13px;
     top: 10px;
     position: absolute;
     overflow: hidden;
     overflow: scroll;
+    padding-bottom: 60px;
+    margin-bottom: -50px;
 }
