@@ -18,12 +18,12 @@
           <h3><%= packing.name.capitalize %></h3>
           <%= show_all_packing_items(packing) %>
         </div>
-
-    <% end %>
   </div>
   <% else %>
       <p>Please click on the bag<p>
 <% end %>
+
+
 <!--Delete items-->
 <% @packings.each do |packing| %>
 <div class="delete-items">

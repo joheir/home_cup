@@ -10,6 +10,18 @@ class MealsController < ApplicationController
     @meal.destroy
   end
 
+  def vote
+    @profile = Profile.find(params[:profile_id])
+    @meal = Meal.find(params[:id])
+    if @profile.voted_for? @meal
+      @meal.unliked_by @profile
+    else
+      @meal.liked_by @profile
+    end
+    # render 'like', formats: :js
+    redirect_to profile_meals_path
+  end
+
   private
 
   def set_profile

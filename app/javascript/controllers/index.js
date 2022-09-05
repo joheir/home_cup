@@ -9,3 +9,6 @@ application.register("hello", HelloController)
 
 import ProgressController from "./progress_controller"
 application.register("progress", ProgressController)
+
+import VotingController from "./voting_controller"
+application.register("voting", VotingController)

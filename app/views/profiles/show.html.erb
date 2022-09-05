@@ -12,7 +12,7 @@
           <% end %>
         </div>
       <div class="total-progress">
-        <%= link_to "#" do %>
+        <%= link_to progresses_profiles_path do %>
             <div class="container-progress">
               <div class="circular-progress">
                 <div class="value value-container"> <%= current_account.done_tasks_count %></div>
@@ -37,6 +37,10 @@
   <hr>
   <div class="packing-list">
     <h3>My packing list</h3>
+      <% @meals.each do |meal| %>
+        <h2><%= meal.votes_for.size %></h2>
+      <% end %>
+     <%#= @meals.order(votes: :desc).first.votes %>
   </div>
 </div>
 </div>

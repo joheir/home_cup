@@ -1,16 +1,17 @@
 class ProfilesController < ApplicationController
+
   def index
-    @disable_log_out = true
     @disable_nav = true
-    @profiles = Profile.all
+    @disable_log_out = true
+    @profiles = Profile.where(account: current_account)
   end
 
   def show
     @profile = Profile.find(params[:id])
+    @meals = Meal.all
   end
 
   def new
-    @disable_log_out = true
     @disable_nav = true
     @profile = Profile.new
   end
@@ -18,9 +19,13 @@ class ProfilesController < ApplicationController
   def create
     @profile = Profile.new(profile_params)
     @profile.account = current_account
-    @profile.save
+    if @profile.save
+      redirect_to profiles_path
+    else
+      @disable_nav = true
+      render :new
+    end
 
-    redirect_to profiles_path
   end
 
   def edit
@@ -30,6 +35,12 @@ class ProfilesController < ApplicationController
   end
 
   def destroy
+  end
+
+  def progresses
+    @disable_nav = true
+    @disable_log_out = true
+    @profiles = Profile.all
   end
 
   private

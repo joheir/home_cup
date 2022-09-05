@@ -1,7 +1,13 @@
 <div class="wrapper">
   <div class="title-text">
-    <h1>Welcome back!</h1>
-    <h2>Here is your team! ⭐️</h2>
+    <% if Profile.all.count > 0 %>
+      <h1>Welcome back!</h1>
+      <h2>Here is your team! ⭐️</h2>
+    <% else %>
+      <h1>Wolcome to HomeCup!</h1>
+       <h2>Please add your your team members! ⭐️</h2>
+    <% end %>
+
   </div>
 
 <div class="profile-pictures">

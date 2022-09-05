@@ -1,0 +1,4 @@
+<%= turbo_frame_tag meal, :vote do %>
+  <% vote_text = @profile&.voted_for?(meal) ? "Unvote" : "Vote" %>
+  <%= button_to vote_text, vote_profile_meal_path(@profile, meal), method: :patch, class: 'like-post' %>
+<% end %>

@@ -264,6 +264,8 @@ body.task_templates {
   background-color: $white;
 }
 
-.login-blob {
-
+.avatar-profile {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 20px;
 }
