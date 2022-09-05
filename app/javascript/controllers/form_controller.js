@@ -7,19 +7,22 @@ export default class extends Controller {
 
 }
 
-const displayNew = () => {
-  const field = document.querySelector(`.active`);
-  if (field.nextElementSibling) {
-    field.nextElementSibling.classList.remove('.d-none');
-    field.nextElementSibling.classList.add('.active');
-    field.classList.remove('active');
-  }
-};
 
-const displayField = (event) => {
-  if (event) {
-    displayNew;
-  }
-};
 
-document.addEventListener("keyup", displayField);
+
+// const displayNew = () => {
+//   const field = document.querySelector(`.active`);
+//   if (field.nextElementSibling) {
+//     field.nextElementSibling.classList.remove('.d-none');
+//     field.nextElementSibling.classList.add('.active');
+//     field.classList.remove('active');
+//   }
+// };
+
+// const displayField = (event) => {
+//   if (event) {
+//     displayNew;
+//   }
+// };
+
+// document.addEventListener("keyup", displayField);
