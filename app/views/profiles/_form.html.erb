@@ -1,7 +1,11 @@
-<%= simple_form_for(@profile, html: {"data-turbo": false}) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :admin, as: :boolean %>
-  <%= f.input :age %>
-  <%= f.input :picture, as: :file %>
-  <%= f.submit %>
-<% end %>
+<div class="create-profile-form">
+  <%= simple_form_for(@profile, html: {"data-turbo": false}) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :admin, as: :boolean %>
+    <%= f.input :age %>
+    <%= f.input :picture, as: :file %>
+    <div class="submit-btn">
+      <%= f.submit %>
+   </div>
+</div>
+  <% end %>
