@@ -6,6 +6,12 @@ class Profile < ApplicationRecord
   has_many :profile_tasks
   acts_as_voter
 
+  has_many :sender_chats, foreign_key: :receiver_id, class_name: "Chat"
+  has_many :senders, through: :sender_chats
+
+  has_many :receiver_chats, foreign_key: :sender_id, class_name: "Chat"
+  has_many :receivers, through: :receiver_chats
+
   def progress
     return 0 if profile_tasks.empty?
 

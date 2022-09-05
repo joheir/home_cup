@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'chats/new'
+  get 'chats/create'
+  get 'chats/edit'
+  get 'chats/update'
   devise_for :accounts
   root to: "accounts#index"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -13,6 +17,7 @@ Rails.application.routes.draw do
   resources :profiles do
     resources :profile_tasks, only: %i[index update edit]
     resources :packings
+    resources :chats, only: %i[new create update edit index]
     resources :meals, only: %i[index destroy] do
       member do
         patch 'vote', to: "meals#vote"
