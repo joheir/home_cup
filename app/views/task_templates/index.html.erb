@@ -3,6 +3,7 @@
 <div><%= render "shared/guidelines" %></div>
 <%= render "form", task_template: @task_template %>
 
+<h3> Overview of added tasks</h3>
 <ul>
   <% @task_templates.each do |task| %>
       <li><%= task.title %></li>
@@ -12,5 +13,4 @@
   <% end %>
 </ul>
 
-<%= button_to "Assign tasks!", create_multiple_profile_tasks_path, method: :post %>
-<%= link_to 'See my tasks', :back %>
+<%= button_to "Assign tasks!", create_multiple_profile_tasks_path, class: "btn-orange-big-round", method: :post %>
