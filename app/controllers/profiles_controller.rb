@@ -43,7 +43,7 @@ class ProfilesController < ApplicationController
   def progresses
     @disable_nav = true
     @disable_log_out = true
-    @profiles = Profile.all
+    @profiles = current_account.profiles
   end
 
   private

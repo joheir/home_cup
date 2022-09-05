@@ -28,14 +28,19 @@
 .task-row{
   display: flex;
   justify-content: space-between;
+  margin-bottom: 6px;
 }
 
 
 .task-text{
-  h6{
+  box-sizing: border-box;
+  padding-left: 3px;
+  border-left: solid 3px;
+  .task-title{
     margin: 0;
     font-weight: bold;
     font-size: 20px;
+    // border-left: 3px solid;
   }
   p{
     margin: 0;

@@ -33,8 +33,9 @@
             <% @profile_tasks.each do |profile_task| %>
               <div class= "overview-tasks">
                 <div class="task-row">
-                  <div class="task-text">
-                    <h6><%= profile_task.task_template.title %></h6>
+                  <% color = ["#FD703F", "#F27877", "#4EB9B3", "#27357E", "#FFA963" ].sample %>
+                  <div class="task-text" style="border-left-color:<%= "#{color}" %>;">
+                    <p class="task-title" style="color:<%= "#{color}" %>;"><%= profile_task.task_template.title %></p>
                     <p><%= profile_task.task_template.description %></p>
                   </div>
                   <div class="task-check-box">
@@ -60,8 +61,9 @@
                 <% if profile_task.task_template.weekday == day %>
                   <div class= "overview-tasks">
                     <div class="task-row">
-                      <div class="task-text">
-                        <h6><%= profile_task.task_template.title %></h6>
+                      <% color = ["#FD703F", "#F27877", "#4EB9B3", "#27357E", "#FFA963" ].sample %>
+                      <div class="task-text" style="border-left-color:<%= "#{color}" %>;">
+                        <p class="task-title" style="color:<%= "#{color}" %>;"><%= profile_task.task_template.title %></p>
                         <p><%= profile_task.task_template.description %></p>
                       </div>
                       <%= button_to profile_profile_task_path(profile_task.profile, profile_task), remote: true, method: :put, class: "check-box-buton" do %>
