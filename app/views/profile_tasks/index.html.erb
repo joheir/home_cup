@@ -84,7 +84,7 @@
 
 <div class="btndiv">
   <% if @profile.admin? %>
-      <%= link_to "Add a household task!", task_templates_path, class: "btn-orange-4 "%>
+      <%= link_to "Add a household task!", task_templates_path(@profile), class: "btn-orange-4 "%>
   <% end %>
   </div>
 </div>

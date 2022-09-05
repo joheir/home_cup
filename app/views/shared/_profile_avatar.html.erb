@@ -5,7 +5,7 @@
   </a>
   <ul class="dropdown-menu">
   <% if account_signed_in? %>
-    <li><%= link_to "Home", profile_path(@profile), class: "dropdown-item" %></li>
+    <li><%= link_to "Profiles", profiles_path, class: "dropdown-item" %></li>
     <li> <%= button_to "Log out", destroy_account_session_path, class: "dropdown-item", method: :delete, form: {"data-turbo": false} %></li>
   <% end %>
   </ul>

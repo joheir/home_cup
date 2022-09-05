@@ -6,7 +6,6 @@ class ProfileTasksController < ApplicationController
   end
 
   def new
-
   end
 
   def create_multiple
@@ -22,7 +21,9 @@ class ProfileTasksController < ApplicationController
         @p_task.save!
       end
     end
-    # redirect_back_or_to(root_path)
+
+    the_profile_id = session[:current_profile_id] || current_account.profiles.first.id
+    redirect_to(profile_profile_tasks_path(the_profile_id))
   end
 
   # def create
