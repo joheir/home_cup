@@ -1,10 +1,10 @@
 <div class="testing-btn">
   <%- if controller_name != 'sessions' %>
-    <%= link_to "Log in", new_session_path(resource_name), class: "btn-login-page" %><br />
+    <%= link_to "Log in", new_session_path(resource_name), class: "btn-signuplogin" %><br />
   <% end %>
 
   <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-    <%= link_to "Sign up", new_registration_path(resource_name), class: "btn-login-page" %><br />
+    <%= link_to "Sign up", new_registration_path(resource_name), class: "btn-signuplogin" %><br />
   <% end %>
 </div>
 

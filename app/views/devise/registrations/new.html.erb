@@ -28,13 +28,11 @@
     </div>
 
     <div class="form-actions">
-      <%= f.button :submit, "Sign up", class: "btn-signup-page" %>
+      <%= f.button :submit, "Sign up", class: "btn-signuplogin-page" %>
        <%- if controller_name != 'sessions' %>
-       <%= link_to "Log in", new_session_path(resource_name), class: "btn-login-page" %><br />
+       <h4>OR </h4><%= link_to "Log in", new_session_path(resource_name) %><br />
        <% end %>
 
     </div>
   <% end %>
 </div>
-
-<%#= render "devise/shared/links" %>
