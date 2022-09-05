@@ -11,6 +11,7 @@ class ProfilesController < ApplicationController
   end
 
   def new
+    @disable_log_out = true
     @disable_nav = true
     @profile = Profile.new
   end
