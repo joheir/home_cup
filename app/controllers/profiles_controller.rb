@@ -8,10 +8,12 @@ class ProfilesController < ApplicationController
 
   def show
     @profile = Profile.find(params[:id])
+    @meals = Meal.all
     session[:current_profile_id] = @profile.id
   end
 
   def new
+    @disable_log_out = true
     @disable_nav = true
     @disable_log_out = true
     @profile = Profile.new

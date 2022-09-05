@@ -8,37 +8,46 @@ export default class extends Controller {
 
 }
 
-let progressBars = document.querySelectorAll(".circular-progress");
-let valueContainers = document.querySelectorAll(".value-container");
 
-let temps = document.querySelectorAll(".value");
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
 
 document.addEventListener("turbo:load", function() {
+  let progressBars = document.querySelectorAll(".circular-progress");
+  let valueContainers = document.querySelectorAll(".value-container");
 
-  // console.log(temps);
+  let temps = document.querySelectorAll(".value");
+  console.log("SCREAM!!!!!!!!", temps);
+  sleep(100).then(() => {
+    console.log("SLEPT!!!!!!!!");
 
-  temps.forEach((temp, i) => {
-    let progressValue = 0;
-    let progressEndValue = parseInt(temp.innerText, 10);
-    let speed = 50;
+    temps.forEach((temp, i) => {
+      console.log("SCREAM DIFFERENTLY!!!!!!!!", temp);
 
-    //let i = temps.values().indexOf(temp);
+      let progressValue = 0;
+      let progressEndValue = parseInt(temp.innerText, 10);
+      let speed = 5;
 
-    let progress = setInterval(() => {
-      // console.log("the values are:", {i: i, progressValue: progressValue, progressEndValue: progressEndValue})
+      //let i = temps.values().indexOf(temp);
 
-      valueContainers[i].textContent = `${progressValue}%`;
-      progressBars[i].style.background = `conic-gradient(
-        #27357E ${progressValue * 3.6}deg,
-          #cadcff ${progressValue * 3.6}deg
-      )`;
+      let progress = setInterval(() => {
+        // console.log("the values are:", {i: i, progressValue: progressValue, progressEndValue: progressEndValue})
 
-      if (progressValue == progressEndValue) {
-        clearInterval(progress);
-        // i++;
-        // console.log("HELLO!", i)
-      }
-      progressValue++;
-    }, speed);
+        valueContainers[i].textContent = `${progressValue}%`;
+        progressBars[i].style.background = `conic-gradient(
+          #27357E ${progressValue * 3.6}deg,
+            #cadcff ${progressValue * 3.6}deg
+        )`;
+
+        if (progressValue == progressEndValue) {
+          clearInterval(progress);
+          // i++;
+          // console.log("HELLO!", i)
+        }
+        progressValue++;
+      }, speed);
+    })
   })
 });

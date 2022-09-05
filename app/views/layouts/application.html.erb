@@ -10,12 +10,15 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
-  <body class="account-page">
+  <body class="<%= params[:controller].tr("/", "-") %>">
     <%= render "shared/flashes" %>
     <div class="guide-lines">
       <%= render "shared/profile_avatar" unless @disable_log_out %>
       <%= yield %>
+      <div class="push"></div>
     </div>
       <%= render "shared/navbar" unless @disable_nav %>
   </body>
 </html>
+
+<%#= params[:controller].tr("/", "-") %>-<%#= params[:action] %>
