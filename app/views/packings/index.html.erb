@@ -2,13 +2,11 @@
 
 
 <div class="bags-wrapper">
-
   <% @packings.each do |packing| %>
     <a href="<%= profile_packings_path(packing_id: packing.id, profile_id: @profile.id) %>">
         <i class="fa-solid fa-briefcase fa-2x" style="color: #FFA963"></i>
         <p  style="color: #4EB9B3"> <%= packing.name %> </p>
   <% end %>
-
 </div>
 
 <% if params[:packing_id].present? %>
@@ -17,16 +15,19 @@
         <div class="bags">
           <h3><%= packing.name.capitalize %></h3>
           <%= show_all_packing_items(packing) %>
+          <%= link_to 'Delete Bag', profile_packings_path(packing), method: :delete, data: { confirm: 'Are you sure?' }, class: "del-items btn-orange-big-sq" %>
         </div>
   </div>
   <% else %>
-      <p>Please click on the bag<p>
+  <div class= "p-nobag">
+      <p>No bag selected<p>
+  </div>
 <% end %>
 
 
-<!--Delete items-->
+<!-- Add bag -->
 <% @packings.each do |packing| %>
-<div class="delete-items">
-  <%= link_to 'Delete items', profile_packings_path(packing), method: :delete, data: { confirm: 'Are you sure?' }, class: "del-items" %>
+<div class="add-bags">
+  <%= link_to 'Add Bag', new_profile_packing_path, class: "btn-orange-small-round" %>
 </div>
 <% end %>
