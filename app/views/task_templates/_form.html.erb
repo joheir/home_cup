@@ -3,9 +3,10 @@
     <%= f.input :description %>
     <%= f.input :min_age %>
     <%= simple_fields_for :weekdays do |s| %>
-      <%= s.input :selected, as: :check_boxes, collection: ['Monday','Tuesday','Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'] %>
+      <%= s.input :selected, as: :check_boxes, collection: ['Monday','Tuesday','Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+          input_html: { class: "tag-selector" },
+          item_wrapper_class: 'tag-item' %>
     <% end %>
-
 
     <div class="form-actions">
       <%= f.button :submit, 'Submit!' %>
