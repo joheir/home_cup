@@ -18,7 +18,8 @@ class MealsController < ApplicationController
     else
       @meal.liked_by @profile
     end
-    render 'like', formats: :js
+    # render 'like', formats: :js
+    redirect_to profile_meals_path
   end
 
   private
