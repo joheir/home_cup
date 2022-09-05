@@ -11,11 +11,10 @@ class ChatsController < ApplicationController
   def create
     @profile = Profile.find(params[:profile_id])
     @chat = Chat.new(chat_params)
-    @chat.sender = @profile
-    @chat.receiver = @profile
-
-    if @appointment.save
-      redirect_to user_path(current_user), notice: "Appointment was successfully booked."
+    @chat.sender_id = @profile.id
+    @chat.save
+    if @chat.save
+      redirect_to profile_path(@profile), notice: "Message sent!."
     else
       render :new, status: :unprocessable_entity
     end
@@ -28,6 +27,6 @@ class ChatsController < ApplicationController
   end
 
   def chat_params
-    params.require(:chat).permit(:message)
+    params.require(:chat).permit(:message, :receiver_id)
   end
 end
