@@ -1,3 +1,31 @@
+
+body {
+  background-image: url("transparent-blob.png");
+}
+
+body.devise-sessions, body.devise-registrations {
+  background-image: url("transparent-blob-2.png");
+}
+
+body.meals {
+  background-image: url("meal-blob.png");
+}
+body.packings {
+  background-image: url("packings-blob.png");
+}
+
+body.profile_tasks {
+  background-image: url("dashboard-profile-blob.png");
+}
+
+body.profiles {
+  background-image: url("profile-blob.png");
+}
+
+body.task_templates {
+  background-image: url("task-form-blob.png");
+}
+
 .img {
   width: 100px;
   height: 100px;
@@ -36,8 +64,7 @@
 }
 
 .account-page {
-  background-image: url("transparent-blob.png");
-  background-repeat: no-repeat;
+
 }
 
 .account-buttons {
@@ -235,4 +262,10 @@
   height: 100px;
   margin: 0 auto;
   background-color: $white;
+}
+
+.avatar-profile {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 20px;
 }

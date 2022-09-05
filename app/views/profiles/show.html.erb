@@ -37,6 +37,10 @@
   <hr>
   <div class="packing-list">
     <h3>My packing list</h3>
+      <% @meals.each do |meal| %>
+        <h2><%= meal.votes_for.size %></h2>
+      <% end %>
+     <%#= @meals.order(votes: :desc).first.votes %>
   </div>
 </div>
 </div>
