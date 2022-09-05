@@ -21,11 +21,10 @@
     redirect_to task_templates_path
   end
 
-
   def update
     respond_to do |format|
       if @task_template.update(task_template_params)
-        format.html { redirect_to profile_task_templates_path(@profile), notice: "Task was successfully updated." }
+        format.html { redirect_to task_templates_path(@profile), notice: "Task was successfully updated." }
         format.json { render :show, status: :ok, location: @task_template }
       else
         format.html { render :edit, status: :unprocessable_entity }
