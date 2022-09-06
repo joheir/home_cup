@@ -19,12 +19,12 @@ document.addEventListener("turbo:load", function() {
   let valueContainers = document.querySelectorAll(".value-container");
 
   let temps = document.querySelectorAll(".value");
-  console.log("SCREAM!!!!!!!!", temps);
+
   sleep(100).then(() => {
-    console.log("SLEPT!!!!!!!!");
+
 
     temps.forEach((temp, i) => {
-      console.log("SCREAM DIFFERENTLY!!!!!!!!", temp);
+
 
       let progressValue = 0;
       let progressEndValue = parseInt(temp.innerText, 10);
@@ -37,7 +37,7 @@ document.addEventListener("turbo:load", function() {
 
         valueContainers[i].textContent = `${progressValue}%`;
         progressBars[i].style.background = `conic-gradient(
-          #27357E ${progressValue * 3.6}deg,
+          #FFA963 ${progressValue * 3.6}deg,
             #cadcff ${progressValue * 3.6}deg
         )`;
 

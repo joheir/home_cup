@@ -1,5 +1,4 @@
 .avatar {
-  width: 40px;
   border-radius: 50%;
   object-fit: cover;
 }
@@ -22,4 +21,11 @@
 
 .big-avatar{
   border-radius: 50%;
+}
+
+.avatar-profile {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 3px;
+  padding-top: 5px;
 }

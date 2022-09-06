@@ -37,15 +37,20 @@
   <hr>
   <div class="packing-list">
     <h3>My packing list</h3>
+      <% meal_hash = {} %>
       <% @meals.each do |meal| %>
       <!--convert meal in a hash-->
-      <% meal_hash = meal.votes_for.size %>
+      <% meal_hash[meal.id] = meal.votes_for.size %>
       <!--get the highest values of votes-->
-      <%= meal_hash %>
+
 
 
         <!--<h2><%#= meal.votes_for.size %></h2>-->
       <% end %>
+       <% meals_sorted = meal_hash.sort_by {|k, v| v}.reverse.to_h %>
+       <%= meals_sorted.first %>
+       <%= key = meals_sorted.keys[0] %>
+       <%= value = meals_sorted.values[0] %>
      <%#= @meals.order(votes: :desc).first.votes %>
   </div>
 </div>
