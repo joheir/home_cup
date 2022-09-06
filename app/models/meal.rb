@@ -3,4 +3,6 @@ class Meal < ApplicationRecord
   has_many :votes,  as: :votable
   belongs_to :account
   validates :name, :url, :picture_url, presence: true
+  attr_accessor :ingredient
+
 end

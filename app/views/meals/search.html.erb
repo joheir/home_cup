@@ -1,0 +1,16 @@
+<%= form_with url: search_profile_meals_path, method: :get, class: "d-flex" do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Search for ingredient",
+    value: params[:query]
+  %>
+    <%= submit_tag "Search", class: "btn-ghost" %>
+<% end %>
+
+<% @processed_recipes.each do |recipe| %>
+  <%= button_to profile_meals_path(@profile, name: recipe[:name], picture_url: recipe[:picture_url], url: recipe[:url], query: params[:query]), method: :post, remote: true do %>
+    <%= recipe[:name] %>
+    <%= image_tag "#{recipe[:picture_url]}" %>
+  <% end %>
+<% end %>
