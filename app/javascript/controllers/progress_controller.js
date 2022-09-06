@@ -24,7 +24,7 @@ document.addEventListener("turbo:load", function() {
 
 
     temps.forEach((temp, i) => {
-    
+
 
       let progressValue = 0;
       let progressEndValue = parseInt(temp.innerText, 10);
@@ -37,7 +37,7 @@ document.addEventListener("turbo:load", function() {
 
         valueContainers[i].textContent = `${progressValue}%`;
         progressBars[i].style.background = `conic-gradient(
-          #27357E ${progressValue * 3.6}deg,
+          #FFA963 ${progressValue * 3.6}deg,
             #cadcff ${progressValue * 3.6}deg
         )`;
 
