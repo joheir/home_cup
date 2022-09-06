@@ -1,6 +1,6 @@
- class TaskTemplatesController < ApplicationController
+class TaskTemplatesController < ApplicationController
   before_action :set_task_template, only: %i[ show edit update destroy ]
-
+  before_action :set_profile
   def index
     @disable_nav = true
     @task_templates = TaskTemplate.all
@@ -51,4 +51,7 @@
       params.require(:task_template).permit(:title, :description, :min_age)
     end
 
+    def set_chat
+      @chats = Chat.where(receiver: @profile)
+    end
 end

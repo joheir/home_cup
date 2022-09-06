@@ -1,13 +1,56 @@
 <div class="avatar-profile">
   <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     <ion-icon name="person-circle-outline">  <%= cl_image_tag @profile.picture.key, height: 40, width: 40, crop: :fill, class: "avatar" %>
-      <i class="fa-regular fa-bell"></i>
+      <% if @chats.last.done? %>
+        <i class="fa-regular fa-bell"></i>
+      <% else %>
+        <i class="fa-solid fa-bell"></i>
+      <% end %>
   </ion-icon>
   </a>
   <ul class="dropdown-menu">
   <% if account_signed_in? %>
     <li><%= link_to "Profiles", profiles_path, class: "dropdown-item" %></li>
     <li> <%= button_to "Log out", destroy_account_session_path, class: "dropdown-item", method: :delete, form: {"data-turbo": false} %></li>
+    <li><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          Messages
+      </button></li>
   <% end %>
   </ul>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Message</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+          <div class="message-board">
+            <h6>From</h6>
+            <h6>Message</h6>
+          </div>
+            <% if @chats.any? %>
+              <% @chats.where(receiver: @profile).each do |chat| %>
+              <div class="message-board">
+                <p><%= chat.sender.name %></p>
+                <p><%= chat.message %></p>
+                <%= button_to profile_chat_path(chat.receiver, chat), remote: true, method: :pacth, class: "check-box-buton" do %>
+                  <% if chat.done? %>
+                      <i class="fa-regular fa-circle-check"></i>
+                    <% else %>
+                      <i class="fa-regular fa-circle"></i>
+                  <% end %>
+                <% end %>
+              <% end %>
+              </div>
+            <% end %>
+          </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
 </div>

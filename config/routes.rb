@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   end
 
   resources :profiles do
-    resources :chats, only: %i[new create update edit index]
+    resources :chats, only: %i[new create update edit index destroy]
     resources :profile_tasks, only: %i[index update edit]
     resources :packings
     resources :meals, only: %i[index destroy] do

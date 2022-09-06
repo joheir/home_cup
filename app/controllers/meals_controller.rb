@@ -27,4 +27,8 @@ class MealsController < ApplicationController
   def set_profile
     @profile = Profile.find(params[:profile_id])
   end
+
+  def set_chat
+    @chats = Chat.where(receiver: @profile)
+  end
 end

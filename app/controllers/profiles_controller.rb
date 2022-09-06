@@ -1,5 +1,5 @@
 class ProfilesController < ApplicationController
-
+  before_action :set_chat
   def index
     @disable_nav = true
     @disable_log_out = true
@@ -10,6 +10,7 @@ class ProfilesController < ApplicationController
     @profile = Profile.find(params[:id])
     @meals = Meal.all
     session[:current_profile_id] = @profile.id
+    @chats = Chat.all
   end
 
   def new
@@ -50,5 +51,9 @@ class ProfilesController < ApplicationController
 
   def profile_params
     params.require(:profile).permit(:name, :admin, :age, :picture)
+  end
+
+  def set_chat
+    @chats = Chat.where(receiver: @profile)
   end
 end

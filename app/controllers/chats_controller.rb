@@ -1,4 +1,5 @@
 class ChatsController < ApplicationController
+  before_action :set_chat, only: %i[index, new create]
 
   def index
     @profile = Profile.find(params[:profile_id])
@@ -26,9 +27,23 @@ class ChatsController < ApplicationController
   end
 
   def update
+    @chat = Chat.find(params[:id])
+    @chat.receiver = @profile
+    @chat.toggle!(:done)
+  end
+
+  def destroy
+    @profile = Profile.find(params[:profile_id])
+    @chats = Chat.where(receiver: @profile)
+    @chats.destroy_all
+    redirect_to profile_path(@profile)
   end
 
   def chat_params
     params.require(:chat).permit(:message, :receiver_id)
+  end
+
+  def set_chat
+    @chats = Chat.where(receiver: @profile)
   end
 end
