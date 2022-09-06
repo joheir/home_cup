@@ -19,4 +19,3 @@ document.querySelectorAll(".item-input").forEach((item) => {
   item.querySelector("input").addEventListener("keyup", renderItemInput)
 })
 
-export { renderItemInput };
