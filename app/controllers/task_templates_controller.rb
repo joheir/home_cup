@@ -1,4 +1,4 @@
- class TaskTemplatesController < ApplicationController
+class TaskTemplatesController < ApplicationController
   before_action :set_task_template, only: %i[ show edit update destroy ]
 
   def index
@@ -43,6 +43,7 @@
   end
 
   private
+
     def set_task_template
       @task_template = TaskTemplate.find(params[:id])
     end
@@ -50,5 +51,4 @@
     def task_template_params
       params.require(:task_template).permit(:title, :description, :min_age)
     end
-
 end

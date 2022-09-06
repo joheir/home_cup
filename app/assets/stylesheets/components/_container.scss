@@ -15,7 +15,7 @@ body.packings {
 }
 
 body.profile_tasks {
-  background-image: url("dashboard-profile-blob.png");
+  background-image: url("dashboard-profile-blob-inversed.png");
 }
 
 body.profiles {
@@ -23,7 +23,7 @@ body.profiles {
 }
 
 body.task_templates {
-  background-image: url("task-form-blob.png");
+  background-image: url("task_form_blob_inversed.png");
 }
 
 .img {
@@ -135,13 +135,6 @@ body.task_templates {
   font-weight: bold;
   color: $dark-blue;
 }
-.meals-text {
-  text-align: center;
-  margin-top: 30px;
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: $dark-blue;
-}
 
 .profile-pictures {
   display: flex;
@@ -234,4 +227,20 @@ body.task_templates {
   margin-top: 10px;
   display: flex;
   justify-content: center;
+}
+
+.progress-text {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: $dark-blue;
+}
+
+.task-temp-text {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: $dark-blue;
 }
