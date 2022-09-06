@@ -1,33 +1,32 @@
-<h1 class="bags-text">Hola Bags!</h1>
-
+<h2 class="bags-text">Hola Bags!</h2>
 
 <div class="bags-wrapper">
   <% @packings.each do |packing| %>
     <a href="<%= profile_packings_path(packing_id: packing.id, profile_id: @profile.id) %>">
-        <i class="fa-solid fa-briefcase fa-2x" style="color: #FFA963"></i>
-        <p  style="color: #4EB9B3"> <%= packing.name %> </p>
+        <% color = ["#FD703F", "#F27877", "#4EB9B3", "#27357E", "#FFA963" ].sample %>
+        <i class="fa-solid fa-briefcase fa-2x" style="color:<%= "#{color}" %>;"></i>
+        <p  style="color:<%= "#{color}" %>;"> <%= packing.name %> </p>
   <% end %>
 </div>
 
 <% if params[:packing_id].present? %>
-  <% packing = Packing.find(params[:packing_id]) %>
-  <div id="content">
-        <div class="bags">
-          <h3><%= packing.name.capitalize %></h3>
-          <%= show_all_packing_items(packing) %>
-          <%= link_to 'Delete Bag', profile_packings_path(packing), method: :delete, data: { confirm: 'Are you sure?' }, class: "del-items btn-orange-big-sq" %>
-        </div>
-  </div>
+  <% packing = Packing.where(id: params[:packing_id]).first %>
+  <% if packing.present? %>
+    <div id="content">
+          <div class="bags">
+            <h3><%= packing.name.capitalize %></h3>
+            <%= show_all_packing_items(packing) %>
+            <%= link_to 'Delete Bag', profile_packing_path(@profile, packing), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "del-items" %>
+          </div>
+    </div>
+  <% end %>
   <% else %>
   <div class= "p-nobag">
       <p>No bag selected<p>
   </div>
 <% end %>
 
-
 <!-- Add bag -->
-<% @packings.each do |packing| %>
 <div class="add-bags">
   <%= link_to 'Add Bag', new_profile_packing_path, class: "btn-orange-small-round" %>
 </div>
-<% end %>

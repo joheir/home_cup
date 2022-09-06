@@ -42,9 +42,8 @@ class ProfilesController < ApplicationController
   end
 
   def progresses
-    @disable_nav = true
-    @disable_log_out = true
     @profiles = current_account.profiles
+    @profile = Profile.find(params[:profile_id])
   end
 
   private

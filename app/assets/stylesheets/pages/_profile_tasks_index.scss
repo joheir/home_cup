@@ -1,5 +1,5 @@
 .overview-tasks {
-  display: flex;
+  // display: flex;
   justify-content: center;
   align-items: center;
   background-color: transparent;
@@ -22,5 +22,28 @@
     padding-left: 50px;
     padding-top: 35px;
     text-align: center;
+  }
+}
+
+.task-row{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+
+.task-text{
+  box-sizing: border-box;
+  padding-left: 3px;
+  border-left: solid 3px;
+  .task-title{
+    margin: 0;
+    font-weight: bold;
+    font-size: 20px;
+    // border-left: 3px solid;
+  }
+  p{
+    margin: 0;
+    font-size: 16px;
   }
 }

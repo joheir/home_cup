@@ -1,19 +1,19 @@
-<h2 class="meals-text">Meal Options</h2>
+<h2>Meal Options</h2>
 
-<div class="recipe-list" data-controller="meal-cards-list">
-  <% @meals.each do |meal| %>
-      <div class="clickable">
-        <div class="meal-cards">
-          <%= image_tag(meal.picture_url, class:"img") %>
-        </div>
-        <div class="meal-card-info">
-          <div>
-            <p><%= meal.name %><p>
-          </div>
-        </div>
-        <div class="like-link">
+<% if @profile.admin? %>
+  <%= link_to "Search new meals", search_profile_meals_path %>
+<% end %>
+
+<div class="container text-center card-wrapper">
+   <% @meals.each do |meal| %>
+      <div class="card" style="width: 10rem;">
+      <img src="<%= meal.picture_url %>" class="card-img-top" alt="...">
+      <div class="card-body">
+        <p class="card-text"><%= meal.name %></p>
+         <div class="like-link">
           <%= render 'meals/like_link', meal: meal %>
         </div>
       </div>
+    </div>
   <% end %>
 </div>

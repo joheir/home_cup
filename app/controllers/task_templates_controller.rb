@@ -43,6 +43,7 @@ class TaskTemplatesController < ApplicationController
   end
 
   private
+
     def set_task_template
       @task_template = TaskTemplate.find(params[:id])
     end
@@ -54,4 +55,5 @@ class TaskTemplatesController < ApplicationController
     def set_chat
       @chats = Chat.where(receiver: @profile)
     end
+
 end
