@@ -1,6 +1,6 @@
 <div class="wrapper">
   <div class="progressoverview">
-      <h2 class="progress-text">Progress</h2>
+      <h2>Progress</h2>
       <div class="progresses">
         <div class="personal-progress">
           <%= link_to profile_profile_tasks_path(@profile) do %>
@@ -12,7 +12,7 @@
           <% end %>
         </div>
       <div class="total-progress">
-        <%= link_to progresses_profiles_path do %>
+        <%= link_to progresses_profile_profiles_path(@profile) do %>
             <div class="container-progress">
               <div class="circular-progress">
                 <div class="value value-container"> <%= current_account.done_tasks_count %></div>
@@ -25,7 +25,7 @@
     </div>
   <hr>
     <div class="meals">
-      <h3>What are we eating?</h3>
+      <h2>What are we eating?</h2>
       <%= link_to profile_meals_path(@profile) do %>
       <div class="meal-card-dash">
            <% result = [] %>
@@ -42,7 +42,21 @@
     </div>
   <hr>
   <div class="packing-list">
+<<<<<<< HEAD
+    <h2>My packing list</h2>
+      <% @meals.each do |meal| %>
+      <!--convert meal in a hash-->
+      <% meal_hash = meal.votes_for.size %>
+      <!--get the highest values of votes-->
+      <%= meal_hash %>
+
+
+        <!--<h2><%#= meal.votes_for.size %></h2>-->
+      <% end %>
+     <%#= @meals.order(votes: :desc).first.votes %>
+=======
     <h3>My packing list</h3>
+>>>>>>> master
   </div>
 </div>
 </div>

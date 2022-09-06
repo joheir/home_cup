@@ -5,17 +5,16 @@ Rails.application.routes.draw do
   resources :accounts, only: %i[index]
 
   resources :profiles do
-    collection do
-      get 'progresses', to: "profiles#progresses"
-    end
-  end
-
-  resources :profiles do
     resources :profile_tasks, only: %i[index update edit]
     resources :packings
     resources :meals, only: %i[index destroy] do
       member do
         patch 'vote', to: "meals#vote"
+      end
+    end
+    resources :profiles do
+      collection do
+        get 'progresses', to: "profiles#progresses"
       end
     end
   end
