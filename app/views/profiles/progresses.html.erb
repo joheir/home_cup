@@ -3,13 +3,16 @@
     <h2>Team's progress 🚀</h2>
   </div>
   <% @profiles.each do |profile| %>
-  <div class="progress-box">
-    <%= cl_image_tag profile.picture.key, height: 90, width: 90, crop: :fill, class: "big-avatar" %>
-    <div class="container-progress">
-      <div class="circular-progress">
-        <div class="value value-container"><%= profile.progress %></div>
+    <%= link_to new_profile_chat_path(profile) do %>
+      <i class="fa-regular fa-bell"></i>
+    <% end %>
+    <div class="progress-box">
+      <%= cl_image_tag profile.picture.key, height: 90, width: 90, crop: :fill, class: "big-avatar" %>
+      <div class="container-progress">
+        <div class="circular-progress">
+          <div class="value value-container"><%= profile.progress %></div>
+        </div>
       </div>
     </div>
-  </div>
   <% end %>
 </div>

@@ -1,4 +1,19 @@
 .message-board{
   display: flex;
   justify-content: space-between;
+
+  p{
+    font-size: 10px;
+  }
+}
+
+button{
+  font-size: inherit;
+  font-style: inherit;
+  color: inherit;
+  border: none;
+  background-color: transparent;
+  padding-left: 16px;
+  padding-top: 4px;
+  padding-bottom: 4px;
 }

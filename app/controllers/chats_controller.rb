@@ -14,7 +14,8 @@ class ChatsController < ApplicationController
   def create
     @profile = Profile.find(params[:profile_id])
     @chat = Chat.new(chat_params)
-    @chat.sender_id = @profile.id
+    @chat.receiver_id = @profile.id
+    @chat.sender_id = session[:current_profile_id]
     @chat.save
     if @chat.save
       redirect_to profile_path(@profile), notice: "Message sent!."
@@ -40,7 +41,7 @@ class ChatsController < ApplicationController
   end
 
   def chat_params
-    params.require(:chat).permit(:message, :receiver_id)
+    params.require(:chat).permit(:message)
   end
 
   def set_chat

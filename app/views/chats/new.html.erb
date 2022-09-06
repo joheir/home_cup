@@ -4,7 +4,6 @@
 <div class = "form">
   <%= simple_form_for [@profile, @chat] do |f| %>
     <%= f.input :message %>
-    <%= f.input :receiver_id, collection: current_account.profiles %>
     <div class="form-actions">
       <%= f.button :submit %>
     </div>
