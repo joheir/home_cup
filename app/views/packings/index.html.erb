@@ -3,8 +3,9 @@
 <div class="bags-wrapper">
   <% @packings.each do |packing| %>
     <a href="<%= profile_packings_path(packing_id: packing.id, profile_id: @profile.id) %>">
-        <i class="fa-solid fa-briefcase fa-2x" style="color: #FFA963"></i>
-        <p  style="color: #4EB9B3"> <%= packing.name %> </p>
+        <% color = ["#FD703F", "#F27877", "#4EB9B3", "#27357E", "#FFA963" ].sample %>
+        <i class="fa-solid fa-briefcase fa-2x" style="color:<%= "#{color}" %>;"></i>
+        <p  style="color:<%= "#{color}" %>;"> <%= packing.name %> </p>
   <% end %>
 </div>
 
@@ -15,7 +16,7 @@
           <div class="bags">
             <h3><%= packing.name.capitalize %></h3>
             <%= show_all_packing_items(packing) %>
-            <%= link_to 'Delete Bag', profile_packing_path(@profile, packing), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "del-items btn-orange-big-sq" %>
+            <%= link_to 'Delete Bag', profile_packing_path(@profile, packing), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "del-items" %>
           </div>
     </div>
   <% end %>
