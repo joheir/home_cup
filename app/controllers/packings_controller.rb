@@ -15,8 +15,8 @@ class PackingsController < ApplicationController
   def create
     @packing = Packing.new(packing_params)
     @packing.profile = @profile
-    @profile.save
-    redirect_to profiles_path
+    @packing.save
+    redirect_to profile_packings_path(@profile)
   end
 
   def edit

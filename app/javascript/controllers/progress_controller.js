@@ -19,12 +19,12 @@ document.addEventListener("turbo:load", function() {
   let valueContainers = document.querySelectorAll(".value-container");
 
   let temps = document.querySelectorAll(".value");
-  console.log("SCREAM!!!!!!!!", temps);
+
   sleep(100).then(() => {
-    console.log("SLEPT!!!!!!!!");
+
 
     temps.forEach((temp, i) => {
-      console.log("SCREAM DIFFERENTLY!!!!!!!!", temp);
+    
 
       let progressValue = 0;
       let progressEndValue = parseInt(temp.innerText, 10);
