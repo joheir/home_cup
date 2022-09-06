@@ -1,6 +1,8 @@
 class ChatsController < ApplicationController
 
   def index
+    @profile = Profile.find(params[:profile_id])
+    @chats = Chat.all
   end
 
   def new

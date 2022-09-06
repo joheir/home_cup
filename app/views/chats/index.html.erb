@@ -1,0 +1,9 @@
+<% @chats.where(sender: @profile).each do |chat| %>
+  <%= chat.message %>
+  <%= chat.receiver.name %>
+<% end %>
+
+<% @chats.where(receiver: @profile).each do |chat| %>
+  <%= chat.message %>
+  <%= chat.sender.name %>
+<% end %>
