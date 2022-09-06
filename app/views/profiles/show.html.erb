@@ -28,25 +28,21 @@
       <h3>What are we eating?</h3>
       <%= link_to profile_meals_path(@profile) do %>
       <div class="meal-card-dash">
-          <h2 class="noodles-btn">Noodles</h2>
-        <img class="img-p" src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Zm9vZHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"/>
-        <div class="meal-card-infos">
+           <% result = [] %>
+           <% @meals.each_with_object({}) do |meal, total| %>
+           <% result << meal.votes_for.size %>
+           <% end %>
+           <%= result.max %>
+           <% maximum = result.max %>
+           <% top_meal = @meals.select {|meal| meal.votes_for.size == maximum}.first %>
+           <!--<img src=<%#= top_meal.picture_url %> class="img-p" alt="img-p">-->
+            <%= image_tag(top_meal.picture_url, class:"img-p") %>
         </div>
       <% end %>
     </div>
   <hr>
   <div class="packing-list">
     <h3>My packing list</h3>
-      <% @meals.each do |meal| %>
-      <!--convert meal in a hash-->
-      <% meal_hash = meal.votes_for.size %>
-      <!--get the highest values of votes-->
-      <%= meal_hash %>
-
-
-        <!--<h2><%#= meal.votes_for.size %></h2>-->
-      <% end %>
-     <%#= @meals.order(votes: :desc).first.votes %>
   </div>
 </div>
 </div>
