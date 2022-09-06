@@ -1,6 +1,7 @@
 class PackingsController < ApplicationController
  before_action :set_profile
 
+
   def index
     @packings = Packing.all
   end
@@ -26,7 +27,8 @@ class PackingsController < ApplicationController
   end
 
   def destroy
-     @packing.destroy
+    @packing = Packing.find(params[:id])
+    @packing.destroy
 
       respond_to do |format|
         format.html { redirect_to profiles_path, notice: "Packing was successfully destroyed." }
