@@ -53,7 +53,7 @@ class TaskTemplatesController < ApplicationController
     end
 
     def set_chat
-      @chats = Chat.where(receiver: @profile)
+      @chats = Chat.where(receiver_chat: @profile)
     end
 
 end

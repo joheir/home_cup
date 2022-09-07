@@ -77,9 +77,9 @@ class MealsController < ApplicationController
 
 
   def set_chat
-    @chats = Chat.where(receiver: @profile)
+    @chats = Chat.where(receiver_chat: @profile)
   end
-  
+
   def meal_params
     params.require(:meal).permit(:name, :url, :picture_url)
   end

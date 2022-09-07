@@ -1,20 +1,35 @@
  <h2>Your Messages ✉️</h2>
 
-
-<% if @chats.where(receiver: @profile).any? %>
-  <% @chats.where(receiver: @profile).each do |chat| %>
-  <div class="message-board">
-    <p><%= chat.sender.name %></p>
-    <p><%= chat.message %></p>
-    <%= button_to profile_chat_path(chat.receiver, chat), remote: true, method: :patch, class: "message-read" do %>
-      <% if chat.done? %>
-          <i class="fa-regular fa-circle-check"></i>
-        <% else %>
-          <i class="fa-regular fa-circle"></i>
-        <% end %>
-    <% end %>
-  <% end %>
+<div class="chat-page">
+  <div class="chat-header">
+    <h4>From</h4>
+    <h4>Message</h4>
   </div>
-<% else %>
-  <p>You have no messages</p>
-<% end %>
+  <% if @chats.where(receiver_chat_id: @profile.id).any? %>
+  <%# raise  %>
+      <% @chats.where(receiver_chat_id: @profile.id).order(created_at: :desc).each do |chat| %>
+          <% if chat.done? %>
+            <div class="message-board-done">
+              <div class="image-name">
+                <%= cl_image_tag chat.sender_chat.picture.key, height: 40, width: 40, crop: :fill, class: "big-avatar" %>
+                <%= button_to "#{chat.sender_chat.name}", profile_chat_path(chat.receiver_chat, chat), remote: true, method: :patch, class: "message-board-button" %>
+              </div>
+              <div>
+                <p><%= chat.message %></p>
+              </div>
+            </div>
+          <% else %>
+            <div class="message-board">
+              <div>
+                <%= button_to "#{chat.sender_chat.name}", profile_chat_path(chat.receiver_chat, chat), remote: true, method: :patch, class: "message-board-button" %>
+              </div>
+              <div>
+                <p><%= chat.message %></p>
+              </div>
+            </div>
+          <% end %>
+      <% end %>
+  <% else %>
+    <p>You have no messages</p>
+  <% end %>
+</div>

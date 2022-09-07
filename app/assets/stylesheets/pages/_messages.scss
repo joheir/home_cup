@@ -1,9 +1,37 @@
 .message-board{
   display: flex;
   justify-content: space-between;
+  border-bottom: solid 0.5px grey;
 
   p{
-    font-size: 10px;
+    font-size: 16px;
+  }
+  .message-board-button {
+    padding: 0;
+  }
+}
+
+// form:has(button):has(.message-board-done){
+//   background-color: purple;
+// }
+
+.message-board-done{
+  display: flex;
+  justify-content: space-between;
+  color: grey;
+  border-bottom: solid 0.5px grey;
+
+  p {
+    color: grey;
+  }
+
+  .message-board-button {
+    padding: 0;
+    font-style: $body-font;
+  }
+
+  .button-to {
+    font-style: $body-font;
   }
 }
 
@@ -16,4 +44,19 @@ button{
   padding-left: 16px;
   padding-top: 4px;
   padding-bottom: 4px;
+}
+
+.chat-header{
+  display: flex;
+  justify-content: space-between;
+  border-bottom: solid 1px grey;
+  padding-top: 20px;
+}
+
+.chat-page {
+  padding: 0 15px;
+}
+
+.image-name{
+
 }
