@@ -26,7 +26,7 @@
 
 .progressoverview {
   margin: 5px;
-  padding: 10px;
+  padding: 20px;
   background-color: rgba(225, 225, 225, 0.306);
   border-radius: 10px;
 
@@ -41,8 +41,24 @@
   justify-content: space-around;
 }
 
+.icon-progress {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-multi-progress {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .personal-progress {
   margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
 }
 
 .total-progress {
