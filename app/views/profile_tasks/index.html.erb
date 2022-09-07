@@ -93,12 +93,10 @@
     </div>
   </div>
 
-
-</div>
-
-<div class="btndiv">
-  <% if @profile.admin? %>
-      <%= link_to "Add a household task!", task_templates_path(@profile), class: "btn-orange-4 "%>
-  <% end %>
+  <div class="btndiv">
+    <% if @profile.admin? %>
+        <%= link_to "Add household tasks!", task_templates_path(@profile), class: "btn-orange-big-sq"%>
+    <% end %>
+    </div>
   </div>
 </div>
