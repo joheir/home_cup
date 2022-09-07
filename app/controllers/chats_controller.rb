@@ -28,9 +28,11 @@ class ChatsController < ApplicationController
   end
 
   def update
+    @profile = Profile.find(params[:profile_id])
     @chat = Chat.find(params[:id])
     @chat.receiver = @profile
     @chat.toggle!(:done)
+    redirect_to profile_chats_path(@profile)
   end
 
   def destroy
