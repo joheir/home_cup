@@ -45,7 +45,11 @@
             <% maximum = result.max %>
             <% top_meal = @meals.select {|meal| meal.votes_for.size == maximum}.first %>
             <!--<img src=<%#= top_meal.picture_url %> class="img-p" alt="img-p">-->
-            <%= image_tag(top_meal.picture_url, class:"img-p") %>
+            <% if top_meal.nil? %>
+              <%= image_tag('https://images.unsplash.com/photo-1484632105053-8662f3194e7f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8cGxhdGUlMjBib3dsfGVufDB8MHwwfHw%3D&auto=format&fit=crop&w=800&q=60', class:"img-p") %>
+            <% else %>
+              <%= image_tag(top_meal.picture_url, class:"img-p") %>
+            <% end %>
         </div>
       <% end %>
     </div>

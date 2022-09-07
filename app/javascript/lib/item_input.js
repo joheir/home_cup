@@ -1,4 +1,4 @@
-document.ready(function renderItemInput() {
+function renderItemInput() {
   console.log("HELLO FROM INPUT ITEMS")
   var previousItem = document.querySelectorAll(".item-input")[0];
 
@@ -11,11 +11,10 @@ document.ready(function renderItemInput() {
     }
     previousItem = item;
   })
-})
+}
 
 renderItemInput()
 
 document.querySelectorAll(".item-input").forEach((item) => {
   item.querySelector("input").addEventListener("keyup", renderItemInput)
 })
-
