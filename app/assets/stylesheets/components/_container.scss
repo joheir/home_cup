@@ -1,10 +1,10 @@
 
 body {
-  background-image: url("transparent-blob.png");
+  background-image: url("d-blob-1.png");
 }
 
 body.devise-sessions, body.devise-registrations {
-  background-image: url("transparent-blob-2.png");
+  background-image: url("session-registration-blob.png");
 }
 
 body.meals {
@@ -19,7 +19,7 @@ body.profile_tasks {
 }
 
 body.profiles {
-  background-image: url("profile-blob.png");
+  background-image: url("d-blob-1.png");
 }
 
 body.task_templates {
@@ -143,18 +143,41 @@ body.task_templates {
 }
 
 .profile-avatar {
-  margin: 20px;
+  margin: 5px;
   display: flex;
-  border: 5px solid $dark-blue;
-  border-radius: 50%;
+  //border: 5px solid $dark-blue;
+  border-radius: 10%;
+  //background-color: $white;
 }
 
 .profile-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: hidden;
+  //background-color: $white;
+  margin: 20px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  transition: all 0.3s ease-in-out;
 }
 
+.profile-wrapper:hover {
+  transform: scale(1.07);
+}
+
+.prof-img {
+  object-fit: cover;
+  background-position: center;
+  width: 100%;
+  border-radius: 20px;
+  border: 2px solid $orange;
+}
+
+.profile-name{
+  color: $white;
+  font-size: 1.5rem;
+}
 
 // IMAGE PROFILE PAGE
 .img-p {
@@ -210,16 +233,12 @@ body.task_templates {
 }
 
 .create-profile-form {
-  background-color: $dark-blue;
   padding: 10px;
   border-radius: 10px;
-  color: $white;
-  margin-top: 100px;
-  opacity: 0.7;
+  margin-top: 120px;
 }
 
 .submit-btn {
-  background-color: $dark-blue;
   color: $white;
   border: none;
   border-radius: 10px;
@@ -243,4 +262,16 @@ body.task_templates {
   font-size: 2.5rem;
   font-weight: bold;
   color: $dark-blue;
+}
+
+.task-text {
+  text-align: left;
+}
+
+.task-td-wrapper {
+  margin-left: 10px;
+}
+
+.task-check-box {
+  margin-right: 20px;
 }

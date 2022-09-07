@@ -1,5 +1,14 @@
 .task-templates-page{
+  margin-top: 24px;
   ul {
-    padding-right: 32px;
+    padding-right: 10px;
+    padding-left: 0;
+  }
+
+  h3 {
+    padding-bottom: 16px;
+  }
+  .task-row{
+    margin-bottom: 15px;
   }
 }

@@ -1,4 +1,5 @@
-<div class="wrapper">
+<h2>My tasks</h2>
+<div class="wrapper-profile-task">
   <div class="header-profile">
   <div class="text-in-header">
       <% if @profile.progress < 10 %>
@@ -27,25 +28,25 @@
   <div class="task-overview">
     <div id="carouselExampleControls" class="carousel slide">
       <div class="carousel-inner">
-        <div class="carousel-item active text-center" data-bs-interval="false">
-          <h1>All</h1>
+        <div class="carousel-item active text-center " data-bs-interval="false">
+          <h1>All tasks</h1>
           <ul>
-            <% @profile_tasks.each do |profile_task| %>
+            <% @profile_tasks.order(id: :desc).each do |profile_task| %>
               <div class= "overview-tasks">
                 <div class="task-row">
-                  <% color = ["#FD703F", "#F27877", "#4EB9B3", "#27357E", "#FFA963" ].sample %>
-                  <div class="task-text" style="border-left-color:<%= "#{color}" %>;">
-                    <p class="task-title" style="color:<%= "#{color}" %>;"><%= profile_task.task_template.title %></p>
-                    <p><%= profile_task.task_template.description %></p>
-                  </div>
-                  <div class="task-check-box">
                     <%= button_to profile_profile_task_path(profile_task.profile, profile_task), remote: true, method: :put, class: "check-box-buton" do %>
+                    <% color = ["#FD703F", "#F27877", "#4EB9B3", "#27357E", "#FFA963" ].sample %>
+                    <div class="task-text" style="border-left-color:<%= "#{color}" %>;">
+                      <p class="task-title" style="color:<%= "#{color}" %>;"><%= profile_task.task_template.title %></p>
+                      <p><%= profile_task.task_template.description %></p>
+                    </div>
+                    <% end %>
+                  <div class="task-check-box">
                       <% if profile_task.done? %>
                         <i class="fa-solid fa-square"></i>
                       <% else %>
                         <i class="fa-regular fa-square"></i>
                       <% end %>
-                    <% end %>
                   </div>
                 </div>
               <% end %>
@@ -57,22 +58,23 @@
           <div class="carousel-item text-center" data-bs-interval="false">
             <h1><%= day %></h1>
             <ul>
-              <% @profile_tasks.each do |profile_task| %>
+              <% @profile_tasks.order(id: :desc).each do |profile_task| %>
                 <% if profile_task.task_template.weekday == day %>
                   <div class= "overview-tasks">
                     <div class="task-row">
+                        <%= button_to profile_profile_task_path(profile_task.profile, profile_task), remote: true, method: :put, class: "check-box-buton" do %>
                       <% color = ["#FD703F", "#F27877", "#4EB9B3", "#27357E", "#FFA963" ].sample %>
                       <div class="task-text" style="border-left-color:<%= "#{color}" %>;">
                         <p class="task-title" style="color:<%= "#{color}" %>;"><%= profile_task.task_template.title %></p>
                         <p><%= profile_task.task_template.description %></p>
                       </div>
-                      <%= button_to profile_profile_task_path(profile_task.profile, profile_task), remote: true, method: :put, class: "check-box-buton" do %>
+                      <% end %>
+                        <div class="task-check-box">
                         <% if profile_task.done? %>
                           <i class="fa-solid fa-square"></i>
                         <% else %>
                           <i class="fa-regular fa-square"></i>
                         <% end %>
-                      <% end %>
                     </div>
                   </div>
                 <% end %>

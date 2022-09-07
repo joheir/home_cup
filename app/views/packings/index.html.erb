@@ -3,9 +3,8 @@
 <div class="bags-wrapper">
   <% @packings.each do |packing| %>
     <a href="<%= profile_packings_path(packing_id: packing.id, profile_id: @profile.id) %>">
-        <% color = ["#FD703F", "#F27877", "#4EB9B3", "#27357E", "#FFA963" ].sample %>
-        <i class="fa-solid fa-briefcase fa-2x" style="color:<%= "#{color}" %>;"></i>
-        <p  style="color:<%= "#{color}" %>;"> <%= packing.name %> </p>
+        <i class="fa-solid fa-briefcase fa-2x" style="color:<%= packing.color %>;"></i>
+        <p  style="color:<%= packing.color %>;"> <%= packing.name %> </p>
   <% end %>
 </div>
 
