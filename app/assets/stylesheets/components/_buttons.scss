@@ -179,6 +179,68 @@
   transform: translateY(2px);
 }
 
+// Button
+
+// General buttons
+.btn-yellow-small-sq {
+  align-items: center;
+  appearance: none;
+  background-color: $yelloww;
+  border-radius: 4px;
+  border-width: 0;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px, $yelloww 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: white;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "JetBrains Mono",monospace;
+  height: 48px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow .15s,transform .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow,transform;
+  font-size: 18px;
+  width: 50%;
+}
+
+.btn-yellow-small-sq :focus {
+  box-shadow: $yelloww 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, $yelloww 0 -3px 0 inset;
+}
+
+.btn-yellow-small-sq :hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, $yelloww 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.btn-yellow-small-sq :active {
+  box-shadow: $yelloww 0 3px 7px inset;
+  transform: translateY(2px);
+}
+
+.btn-yellow-small-round:active,
+.btn-yellow-small-round:focus {
+  outline: none;
+}
+
+.btn-yellow-small-round:hover {
+  background-position: -20px -20px;
+}
+
+.btn-yellow-small-round:focus:not(:active) {
+  box-shadow: rgba(40, 170, 255, 0.25) 0 0 0 .125em;
+}
+
 
 // SPECIFIC PAGE BUTTONS
 // WELCOME PAGE
