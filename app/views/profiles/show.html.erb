@@ -2,30 +2,34 @@
   <h1>Welcome, <%= @profile.name %> 🏠</h1>
 
   <div class="progressoverview">
-    <h2>Progress</h2>
+
     <div class="progresses">
       <div class="personal-progress">
         <%= link_to profile_profile_tasks_path(@profile) do %>
-        <p>Your progress</p>
-          <div class="container-progress">
-            <div class="circular-progress">
-              <div class="value value-container">
-                <%= @profile.progress %>
+         <div class="icon-progress">
+           <i class="fa-solid fa-user fa-2x" style="color: #BC6564"></i>
+            <div class="container-progress">
+              <div class="circular-progress">
+                <div class="value value-container">
+                  <%= @profile.progress %>
+                </div>
               </div>
             </div>
-          </div>
+        </div>
         <% end %>
       </div>
 
       <div class="total-progress">
         <%= link_to progresses_profile_profiles_path(@profile) do %>
-        <p>Team progress</p>
+         <div class="icon-multi-progress">
+          <i class="fa-solid fa-users fa-2x" style="color: #BC6564"></i>
           <div class="container-progress">
             <div class="circular-progress">
               <div class="value value-container"> <%= current_account.done_tasks_count %>
               </div>
             </div>
           </div>
+        </div>
         <% end %>
       </div>
     </div>

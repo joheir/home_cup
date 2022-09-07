@@ -14,12 +14,12 @@
       <% @profiles.each do |profile| %>
       <%= link_to profile_path(profile) do %>
         <div class="profile-wrapper">
-        <div class="profile-avatar">
-          <%= cl_image_tag profile.picture.key, height: 120, width: 120, crop: :fill, class: "big-avatar" %>
-        </div>
-        <div class="profile-name">
-          <%= profile.name %>
-        </div>
+          <div class="profile-avatar">
+            <%= cl_image_tag profile.picture.key, height: 120, width: 120, crop: :fill, class: "prof-img" %>
+          </div>
+          <div class="profile-name">
+            <%= profile.name %>
+          </div>
         </div>
         <% end %>
       <% end %>
