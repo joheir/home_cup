@@ -1,5 +1,5 @@
 class MealsController < ApplicationController
-  before_action :set_profile
+  before_action :set_profile, except: %i[destroy_all]
 
   def index
     @meals = Meal.all
@@ -51,9 +51,10 @@ class MealsController < ApplicationController
   end
 
 
-  def destroy
-    @meal = Meal.find(params[:id])
-    @meal.destroy
+  def destroy_all
+    @meals = Meal.all
+    @meals.destroy_all
+    redirect_to profile_meals_path(session[:current_profile_id])
   end
 
   def vote

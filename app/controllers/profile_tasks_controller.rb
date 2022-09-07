@@ -10,13 +10,15 @@ class ProfileTasksController < ApplicationController
   end
 
   def create_multiple
-    ProfileTask.destroy_all
-    @template_tasks = TaskTemplate.all
+    @profiles = Profile.where(account: current_account)
+    @profiles.each { |profile| profile.profile_tasks.destroy_all }
+
+    @template_tasks = TaskTemplate.where(account: current_account)
 
     @template_tasks.each do |t_task|
       @p_task = ProfileTask.new
       @p_task.task_template_id = t_task.id
-      profile = Profile.order(Arel.sql('random()')).first
+      profile = current_account.profiles.order(Arel.sql('random()')).first
       if profile.id <= t_task.min_age
         @p_task.profile = profile
         @p_task.save!

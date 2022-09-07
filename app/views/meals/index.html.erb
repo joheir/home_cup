@@ -4,6 +4,10 @@
   <%= link_to "Search new meals", search_profile_meals_path(@profile) %>
 <% end %>
 
+<% if @profile.admin? %>
+  <%= link_to "Remove selected meals", destroy_all_meals_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "del-items" %>
+<% end %>
+
 <div class="container text-center card-wrapper">
    <% @meals.each do |meal| %>
       <div class="card" style="width: 10rem;">
@@ -17,3 +21,5 @@
     </div>
   <% end %>
 </div>
+
+

@@ -4,6 +4,11 @@ class Profile < ApplicationRecord
   has_one_attached :picture
   has_many :packings
   has_many :profile_tasks
+  has_many :votes, class_name: "ActsAsVotable::Vote", as: :voter, dependent: :destroy do
+    def votables
+      includes(:votable).map(&:votable)
+    end
+  end
   acts_as_voter
 
   has_many :sender_chats, foreign_key: :receiver_id, class_name: "Chat"
