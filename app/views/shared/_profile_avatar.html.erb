@@ -37,7 +37,7 @@
               <div class="message-board">
                 <p><%= chat.sender.name %></p>
                 <p><%= chat.message %></p>
-                <%= button_to profile_chat_path(chat.receiver, chat), remote: true, method: :pacth, class: "check-box-buton" do %>
+                <%= button_to profile_chat_path(chat.receiver, chat), remote: true, method: :put, class: "check-box-buton" do %>
                   <% if chat.done? %>
                       <i class="fa-regular fa-circle-check"></i>
                     <% else %>
