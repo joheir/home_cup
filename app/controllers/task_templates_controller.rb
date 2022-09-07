@@ -3,7 +3,7 @@ class TaskTemplatesController < ApplicationController
 
   def index
     @disable_nav = true
-    @task_templates = TaskTemplate.all
+    @task_templates = TaskTemplate.where(account: current_account)
     @task_template = TaskTemplate.new
   end
 
