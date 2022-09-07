@@ -1,5 +1,9 @@
 <%= simple_form_for [@profile, @packing] do |f| %>
   <%= f.input :name%>
+  <!--Dropdown color collection-->
+  <div class="">
+    <%= f.input :color,  collection: Packing::COLORS, label: "Choose your color 🙃" %>
+  </div>
   <div class="item-input">
     <%= f.input :item1, label: "Item 1" %>
   </div>
