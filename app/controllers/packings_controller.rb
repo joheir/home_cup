@@ -3,7 +3,7 @@ class PackingsController < ApplicationController
 
 
   def index
-    @packings = Packing.all
+    @packings = current_account.packings
   end
 
   def show
