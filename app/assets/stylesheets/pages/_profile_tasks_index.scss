@@ -19,9 +19,9 @@
   justify-content: space-between;
 
   .text-in-header{
-    padding-left: 50px;
+    padding-left: 40px;
     padding-top: 35px;
-    text-align: center;
+    text-align: left;
   }
 }
 
@@ -46,4 +46,17 @@
     margin: 0;
     font-size: 16px;
   }
+}
+
+.wrapper-profile-task {
+  padding: 0px;
+  margin-top: 0px;
+}
+
+.task-overview {
+  margin-top: 15px;
+}
+
+.task-template-tasks{
+  padding-top: 40px;
 }
