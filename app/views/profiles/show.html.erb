@@ -1,4 +1,6 @@
 <div class="wrapper">
+  <h1>Welcome, <%= @profile.name %> 🏠</h1>
+
   <div class="progressoverview">
     <h2>Progress</h2>
     <div class="progresses">
@@ -51,7 +53,9 @@
   <hr>
 
   <div class="packing-list">
-    <h2>My packing list <i class="fa-solid fa-briefcase fa-2x"></i> </h2>
+    <%= link_to profile_packings_path(@profile) do %>
+      <h2>My packing list <i class="fa-solid fa-briefcase fa-2x"></i> </h2>
+    <% end %>
   </div>
 
 </div>
