@@ -22,6 +22,12 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :meals do
+    collection do
+      delete 'destroy_all', to: "meals#destroy_all"
+    end
+  end
+
   resources :task_templates, only: %i[create index update destroy]
   resources :profile_tasks, only: %i[destroy] do
     collection do
