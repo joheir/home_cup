@@ -97,7 +97,7 @@
 
   <div class="btndiv">
     <% if @profile.admin? %>
-        <%= link_to "Add household tasks!", task_templates_path(@profile), class: "btn-orange-big-sq"%>
+        <%= link_to "Add household tasks!", new_task_template_path, class: "btn-orange-big-sq"%>
     <% end %>
     </div>
   </div>
