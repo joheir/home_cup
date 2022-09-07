@@ -10,12 +10,6 @@
   object-fit: cover;
 }
 
-.meal-card-dash h2 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
-}
-
 .meal-card-dash p {
   font-size: 12px;
   opacity: .7;
@@ -31,11 +25,67 @@
   position: relative;
 }
 
-.progressoverview{
-  height: 150px;
+.progressoverview {
+  margin: 5px;
+  padding: 10px;
+  background-color: rgba(225, 225, 225, 0.306);
+  border-radius: 10px;
+
+  h2 {
+    margin-bottom: 10px;
+
+    i {
+      font-size: 5px;
+    }
+  }
+
 }
 
-.progresses{
+.progresses {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+}
+
+.personal-progress {
+  margin-bottom: 10px;
+}
+
+.total-progress {
+  margin-bottom: 10px;
+}
+
+.meals {
+  margin: 5px;
+  padding: 10px;
+  background-color: rgba(225, 225, 225, 0.306);
+  border-radius: 10px;
+}
+
+.packing-list {
+  margin: 5px;
+  padding: 10px;
+  background-color: rgba(225, 225, 225, 0.306);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+hr {
+  overflow: visible;
+  height: 30px;
+  border-style: solid;
+  border-color: $peach;
+  border-width: 2px 0 0 0;
+  border-radius: 20px;
+}
+
+hr:before {
+  display: block;
+  content: "";
+  height: 30px;
+  margin-top: -31px;
+  border-style: solid;
+  border-color: $peach;
+  border-width: 0 0 1px 0;
+  border-radius: 20px;
 }
