@@ -9,6 +9,7 @@
   border-radius: 50%;
   display: grid;
   place-items: center;
+  background-color: $peach;
 }
 .circular-progress:before {
   content: "";

@@ -37,8 +37,8 @@ document.addEventListener("turbo:load", function() {
 
         valueContainers[i].textContent = `${progressValue}%`;
         progressBars[i].style.background = `conic-gradient(
-          #FFA963 ${progressValue * 3.6}deg,
-            #cadcff ${progressValue * 3.6}deg
+          #F27877 ${progressValue * 3.6}deg,
+            #F27877 ${progressValue * 3.6}deg
         )`;
 
         if (progressValue == progressEndValue) {
