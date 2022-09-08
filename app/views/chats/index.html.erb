@@ -11,8 +11,9 @@
           <% if chat.done? %>
             <div class="message-board-done">
               <div class="image-name">
-                <%= cl_image_tag chat.sender_chat.picture.key, height: 40, width: 40, crop: :fill, class: "big-avatar" %>
-                <%= button_to "#{chat.sender_chat.name}", profile_chat_path(chat.receiver_chat, chat), remote: true, method: :patch, class: "message-board-button" %>
+                <%= button_to profile_chat_path(chat.receiver_chat, chat), remote: true, method: :patch, class: "message-board-button" do %>
+                  <%= cl_image_tag chat.sender_chat.picture.key, height: 40, width: 40, crop: :fill, class: "big-avatar" %>
+                <% end %>
               </div>
               <div>
                 <p><%= chat.message %></p>
@@ -21,7 +22,9 @@
           <% else %>
             <div class="message-board">
               <div>
-                <%= button_to "#{chat.sender_chat.name}", profile_chat_path(chat.receiver_chat, chat), remote: true, method: :patch, class: "message-board-button" %>
+                <%= button_to profile_chat_path(chat.receiver_chat, chat), remote: true, method: :patch, class: "message-board-button" do %>
+                  <%= cl_image_tag chat.sender_chat.picture.key, height: 40, width: 40, crop: :fill, class: "big-avatar" %>
+                <% end %>
               </div>
               <div>
                 <p><%= chat.message %></p>

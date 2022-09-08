@@ -1,5 +1,6 @@
 class MealsController < ApplicationController
   before_action :set_profile, except: %i[destroy_all]
+  before_action :set_chat
 
   def index
     @meals = Meal.all

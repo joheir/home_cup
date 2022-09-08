@@ -1,6 +1,6 @@
 class PackingsController < ApplicationController
  before_action :set_profile
- before_action :set_profile
+ before_action :set_chat
 
 
   def index

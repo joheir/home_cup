@@ -1,6 +1,6 @@
 class TaskTemplatesController < ApplicationController
   before_action :set_task_template, only: %i[ show edit update destroy ]
-  before_action :set_profile
+  before_action :set_chat
   def index
     @disable_nav = true
     @task_templates = TaskTemplate.where(account: current_account)
