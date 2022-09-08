@@ -7,6 +7,11 @@
         <i class="fa-solid fa-briefcase fa-2x" style="color:<%= packing.color %>;"></i>
         <p  style="color:<%= packing.color %>;"> <%= packing.name %> </p>
   <% end %>
+  <div class="add-bags">
+    <%= link_to new_profile_packing_path do %>
+      <i class="fa-solid fa-circle-plus fa-2x" style="color: orange"></i>
+    <% end %>
+  </div>
 </div>
 
 <% if params[:packing_id].present? %>
@@ -27,6 +32,3 @@
 <% end %>
 
 <!-- Add bag -->
-<div class="add-bags">
-  <%= link_to 'Add Bag', new_profile_packing_path, class: "btn-orange-small-round" %>
-</div>

@@ -3,20 +3,22 @@
     <ion-icon name="person-circle-outline">  <%= cl_image_tag @profile.picture.key, height: 40, width: 40, crop: :fill, class: "avatar" %>
     <div class="bell-badge">
       <% if @chats.empty?  %>
-        <i class="fa-solid fa-bell" style="color: black; font-size: 13px;"></i>
+        <i class="fa-solid fa-bell" style="color: black; font-size: 10px;"></i>
       <% elsif @chats.last.done? %>
-        <i class="fa-solid fa-bell" style="color: red; font-size: 13px;"></i>
+        <i class="fa-solid fa-bell" style="color: red; font-size: 10px;"></i>
       <% else %>
-        <i class="fa-solid fa-bell" style="font-size: 13px;"></i>
+        <i class="fa-solid fa-bell" style="font-size: 10px;"></i>
       <% end %>
     </div>
   </ion-icon>
   </a>
   <ul class="dropdown-menu">
   <% if account_signed_in? %>
-    <li><%= link_to "Profiles", profiles_path, class: "dropdown-item" %></li>
-     <li><%= link_to "Messages",  profile_chats_path(@profile) %> </li>
-    <li> <%= button_to "Log out", destroy_account_session_path, class: "dropdown-item", method: :delete, form: {"data-turbo": false} %></li>
+   <div class="dropd-menu">
+      <li><%= link_to "Profiles", profiles_path, class: "dropdown-item" %></li>
+       <li><%= link_to "Messages",  profile_chats_path(@profile), class: "sms-text" %> </li>
+      <li> <%= button_to "Log out", destroy_account_session_path, class: "dropdown-item", method: :delete, form: {"data-turbo": false} %></li>
+    </div>
   <% end %>
   </ul>
 </div>

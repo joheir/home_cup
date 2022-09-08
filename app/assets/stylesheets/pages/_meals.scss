@@ -49,6 +49,15 @@
   transform: translateY(-10px);
 }
 
+.card-meal {
+  display: -webkit-box;
+}
+.card-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
+}
+
 .centralize{
   text-align: center;
   padding-bottom: 20px;
