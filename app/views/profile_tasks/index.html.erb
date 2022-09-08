@@ -29,32 +29,34 @@
     <div id="carouselExampleControls" class="carousel slide">
       <div class="carousel-inner">
         <div class="carousel-item active text-center " data-bs-interval="false">
-          <h2>All tasks</h2>
+          <h2>Friday</h2>
           <ul>
             <% @profile_tasks.order(id: :desc).each_with_index do |profile_task, i| %>
-              <div class= "overview-tasks">
-                <div class="task-row">
-                    <%= button_to profile_profile_task_path(profile_task.profile, profile_task), remote: true, method: :put, class: "check-box-buton" do %>
-                    <% color = ["#FD703F", "#F27877", "#4EB9B3", "#27357E", "#FFA963", "#FD703F", "#F27877", "#4EB9B3", "#27357E", "#FFA963", "#FD703F", "#F27877", "#4EB9B3", "#27357E", "#FFA963"] %>
-                    <div class="task-text" style="border-left-color:<%= "#{color[i]}" %>;">
-                      <p class="task-title" style="color:<%= "#{color[i]}" %>;"><%= profile_task.task_template.title %></p>
-                      <p><%= profile_task.task_template.description %></p>
-                    </div>
-                    <% end %>
-                  <div class="task-check-box">
-                      <% if profile_task.done? %>
-                        <i class="fa-solid fa-square"></i>
-                      <% else %>
-                        <i class="fa-regular fa-square"></i>
+              <% if profile_task.task_template.weekday == "Friday" %>
+                <div class= "overview-tasks">
+                  <div class="task-row">
+                      <%= button_to profile_profile_task_path(profile_task.profile, profile_task), remote: true, method: :put, class: "check-box-buton" do %>
+                      <% color = ["#FD703F", "#F27877", "#4EB9B3", "#27357E", "#FFA963", "#FD703F", "#F27877", "#4EB9B3", "#27357E", "#FFA963", "#FD703F", "#F27877", "#4EB9B3", "#27357E", "#FFA963"] %>
+                      <div class="task-text" style="border-left-color:<%= "#{color[i]}" %>;">
+                        <p class="task-title" style="color:<%= "#{color[i]}" %>;"><%= profile_task.task_template.title %></p>
+                        <p><%= profile_task.task_template.description %></p>
+                      </div>
                       <% end %>
+                    <div class="task-check-box">
+                        <% if profile_task.done? %>
+                          <i class="fa-solid fa-square"></i>
+                        <% else %>
+                          <i class="fa-regular fa-square"></i>
+                        <% end %>
+                    </div>
                   </div>
-                </div>
+                <% end %>
               <% end %>
             </div>
           </ul>
         </div>
 
-        <% ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"].each do |day|  %>
+        <% ["Saturday", "Sunday","Monday", "Tuesday", "Wednesday", "Thursday"].each do |day|  %>
           <div class="carousel-item text-center" data-bs-interval="false">
             <h2><%= day %></h2>
             <ul>

@@ -14,14 +14,16 @@
   <% end %>
 </div>
 <div class="container text-center card-wrapper">
-   <% @meals.order(id: :desc).each do |meal| %>
+  <% @meals.order(id: :desc).each do |meal| %>
       <div class="card" style="width: 10rem;">
-      <img src="<%= meal.picture_url %>" class="card-img-top" alt="...">
+        <%= link_to(meal.url) do %>
+          <img src="<%= meal.picture_url %>" class="card-img-top" alt="...">
+        <% end %>
       <div class="card-body">
         <div class="card-meal">
-         <p class="card-text"><%= meal.name %></p>
+          <p class="card-text"><%= meal.name %></p>
         </div>
-         <div class="like-link">
+          <div class="like-link">
           <%= render 'meals/like_link', meal: meal %>
         </div>
       </div>

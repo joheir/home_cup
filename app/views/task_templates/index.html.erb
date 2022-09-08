@@ -16,6 +16,7 @@
           </div>
             <%= link_to task_template_path(task), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: 'delete-card' do %>
             <i class="fa-solid fa-trash" style="color:#27357E;"></i>
+            <p id="weekday"><%= task.weekday[0..1] %></p>
           </div>
           <% end %>
       <% end %>
