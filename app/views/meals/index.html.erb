@@ -1,13 +1,16 @@
-<h1>Meal Options</h1>
+<div class="header-combo">
+  <h1>Meal Suggestions</h1>
+  <h6>Vote on your favorite! 🥄</h6>
+</div>
 
 <div class="centralize">
   <% if @profile.admin? %>
-    <%= link_to "Search meals", search_profile_meals_path, class:"btn-yellow-small-sq" %>
+    <%= link_to "Add new meals", search_profile_meals_path, class:"btn-yellow-small-sq" %>
   <% end %>
 </div>
 <div class="centralize1">
   <% if @profile.admin? %>
-    <%= link_to "Remove all meals", destroy_all_meals_path, data: {turbo_method: :delete}, class: "button-overview-task-template" %>
+    <%= link_to "Remove all meals", destroy_all_meals_path, data: {turbo_method: :delete}, class: "button-delete-meals" %>
   <% end %>
 </div>
 <div class="container text-center card-wrapper">
