@@ -31,13 +31,13 @@
         <div class="carousel-item active text-center " data-bs-interval="false">
           <h2>All tasks</h2>
           <ul>
-            <% @profile_tasks.order(id: :desc).each do |profile_task| %>
+            <% @profile_tasks.order(id: :desc).each_with_index do |profile_task, i| %>
               <div class= "overview-tasks">
                 <div class="task-row">
                     <%= button_to profile_profile_task_path(profile_task.profile, profile_task), remote: true, method: :put, class: "check-box-buton" do %>
-                    <% color = ["#FD703F", "#F27877", "#4EB9B3", "#27357E", "#FFA963" ].sample %>
-                    <div class="task-text" style="border-left-color:<%= "#{color}" %>;">
-                      <p class="task-title" style="color:<%= "#{color}" %>;"><%= profile_task.task_template.title %></p>
+                    <% color = ["#FD703F", "#F27877", "#4EB9B3", "#27357E", "#FFA963", "#FD703F", "#F27877", "#4EB9B3", "#27357E", "#FFA963", "#FD703F", "#F27877", "#4EB9B3", "#27357E", "#FFA963"] %>
+                    <div class="task-text" style="border-left-color:<%= "#{color[i]}" %>;">
+                      <p class="task-title" style="color:<%= "#{color[i]}" %>;"><%= profile_task.task_template.title %></p>
                       <p><%= profile_task.task_template.description %></p>
                     </div>
                     <% end %>
@@ -58,14 +58,14 @@
           <div class="carousel-item text-center" data-bs-interval="false">
             <h2><%= day %></h2>
             <ul>
-              <% @profile_tasks.order(id: :desc).each do |profile_task| %>
+              <% @profile_tasks.order(id: :desc).each_with_index do |profile_task, i| %>
                 <% if profile_task.task_template.weekday == day %>
                   <div class= "overview-tasks">
                     <div class="task-row">
                         <%= button_to profile_profile_task_path(profile_task.profile, profile_task), remote: true, method: :put, class: "check-box-buton" do %>
-                      <% color = ["#FD703F", "#F27877", "#4EB9B3", "#27357E", "#FFA963" ].sample %>
-                      <div class="task-text" style="border-left-color:<%= "#{color}" %>;">
-                        <p class="task-title" style="color:<%= "#{color}" %>;"><%= profile_task.task_template.title %></p>
+                      <% color = ["#FD703F", "#F27877", "#4EB9B3", "#27357E", "#FFA963", "#FD703F", "#F27877", "#4EB9B3", "#27357E", "#FFA963", "#FD703F", "#F27877", "#4EB9B3", "#27357E", "#FFA963"] %>
+                      <div class="task-text" style="border-left-color:<%= "#{color[i]}" %>;">
+                        <p class="task-title" style="color:<%= "#{color[i]}" %>;"><%= profile_task.task_template.title %></p>
                         <p><%= profile_task.task_template.description %></p>
                       </div>
                       <% end %>
