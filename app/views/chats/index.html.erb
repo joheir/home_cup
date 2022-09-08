@@ -1,0 +1,38 @@
+ <h2>Your Messages ✉️</h2>
+
+<div class="chat-page">
+  <div class="chat-header">
+    <h4>From</h4>
+    <h4>Message</h4>
+  </div>
+  <% if @chats.where(receiver_chat_id: @profile.id).any? %>
+  <%# raise  %>
+      <% @chats.where(receiver_chat_id: @profile.id).order(created_at: :desc).each do |chat| %>
+          <% if chat.done? %>
+            <div class="message-board-done">
+              <div class="image-name">
+                <%= button_to profile_chat_path(chat.receiver_chat, chat), remote: true, method: :patch, class: "message-board-button" do %>
+                  <%= cl_image_tag chat.sender_chat.picture.key, height: 40, width: 40, crop: :fill, class: "big-avatar" %>
+                <% end %>
+              </div>
+              <div>
+                <p><%= chat.message %></p>
+              </div>
+            </div>
+          <% else %>
+            <div class="message-board">
+              <div>
+                <%= button_to profile_chat_path(chat.receiver_chat, chat), remote: true, method: :patch, class: "message-board-button" do %>
+                  <%= cl_image_tag chat.sender_chat.picture.key, height: 40, width: 40, crop: :fill, class: "big-avatar" %>
+                <% end %>
+              </div>
+              <div>
+                <p><%= chat.message %></p>
+              </div>
+            </div>
+          <% end %>
+      <% end %>
+  <% else %>
+    <p>You have no messages</p>
+  <% end %>
+</div>

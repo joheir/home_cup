@@ -1,5 +1,6 @@
 class MealsController < ApplicationController
   before_action :set_profile, except: %i[destroy_all]
+  before_action :set_chat
 
   def index
     @meals = current_account.meals
@@ -75,6 +76,11 @@ class MealsController < ApplicationController
 
   def set_profile
     @profile = Profile.find(params[:profile_id])
+  end
+
+
+  def set_chat
+    @chats = Chat.where(receiver_chat: @profile)
   end
 
   def meal_params

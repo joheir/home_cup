@@ -1,0 +1,10 @@
+<h2> Send chat to NAME </h2>
+
+<div class = "form">
+  <%= simple_form_for [@profile, @chat] do |f| %>
+    <%= f.input :message %>
+    <div class="form-actions">
+      <%= f.button :submit, "Send message!" %>
+    </div>
+  <% end %>
+</div>

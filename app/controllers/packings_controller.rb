@@ -1,5 +1,6 @@
 class PackingsController < ApplicationController
  before_action :set_profile
+ before_action :set_chat
 
 
   def index
@@ -44,5 +45,9 @@ class PackingsController < ApplicationController
 
   def set_profile
     @profile = Profile.find(params[:profile_id])
+  end
+
+  def set_chat
+    @chats = Chat.where(receiver_chat: @profile)
   end
 end

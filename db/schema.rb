@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_07_113104) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_07_202233) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -53,6 +53,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_07_113104) do
     t.bigint "blob_id", null: false
     t.string "variation_digest", null: false
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
+  end
+
+  create_table "chats", force: :cascade do |t|
+    t.integer "sender_chat_id"
+    t.integer "receiver_chat_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "message"
+    t.boolean "done", default: false
   end
 
   create_table "meals", force: :cascade do |t|
