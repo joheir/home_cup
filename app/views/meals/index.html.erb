@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-<h2>Meal Options</h2>
+<h1>Meal Options</h1>
 
 <% if @profile.admin? %>
   <%= link_to "Search new meals", search_profile_meals_path(@profile) %>
@@ -8,9 +7,7 @@
 <% if @profile.admin? %>
   <%= link_to "Remove selected meals", destroy_all_meals_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "del-items" %>
 <% end %>
-=======
-<h1>Meal Options</h1>
->>>>>>> master
+
 
 <div class="centralize">
   <% if @profile.admin? %>
