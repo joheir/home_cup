@@ -2,13 +2,13 @@ class TaskTemplatesController < ApplicationController
   before_action :set_task_template, only: %i[ show edit update destroy ]
 
   def index
-    @disable_nav = true
+    # @disable_nav = true
     @task_templates = TaskTemplate.where(account: current_account)
     @task_template = TaskTemplate.new
   end
 
   def new
-    @disable_nav = true
+    # @disable_nav = true
     @task_templates = TaskTemplate.where(account: current_account)
     @task_template = TaskTemplate.new
   end
