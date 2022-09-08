@@ -50,12 +50,14 @@
 }
 
 .card-meal {
-  display: -webkit-box;
+  overflow: hidden;
 }
 .card-text {
   overflow: hidden;
   text-overflow: ellipsis;
-  -webkit-line-clamp: 1;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
 }
 
 .centralize{
