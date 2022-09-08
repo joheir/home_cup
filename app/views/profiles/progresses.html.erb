@@ -2,16 +2,30 @@
   <div class="header">
     <h1>Team's progress 🚀</h1>
   </div>
-  <% @profiles.each do |profile| %>
+  <% @profiles.excluding(@profile).each do |profile| %>
     <%= link_to new_profile_chat_path(profile) do %>
-      <div class="progress-box">
-        <%= cl_image_tag profile.picture.key, height: 90, width: 90, crop: :fill, class: "big-avatar" %>
-        <div class="container-progress">
-          <div class="circular-progress">
-            <div class="value value-container"><%= profile.progress %></div>
+        <div class="progress-box">
+          <div class="flex-column">
+            <%= cl_image_tag profile.picture.key, height: 100, width: 100, crop: :fill, class: "big-avatar" %>
+            <p> <%= profile.name %> </p>
+          </div>
+          <div class="flex-column">
+            <div class="container-progress total-p-page">
+              <div class="circular-progress">
+                <div class="value value-container"><%= profile.progress %></div>
+              </div>
+            </div>
+            <% if profile.progress < 30 %>
+              <p>Snoozer 💤</p>
+            <% elsif profile.progress < 60 %>
+              <p>Energetic 💪</p>
+            <% elsif profile.progress < 90 %>
+              <p>Superstar! ⭐️</p>
+            <% elsif profile.progress < 100 %>
+              <p>Champion! 🏆</p>
+            <% end %>
           </div>
         </div>
-      </div>
     <% end %>
   <% end %>
 </div>

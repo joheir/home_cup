@@ -8,20 +8,11 @@ export default class extends Controller {
 
 }
 
-
-
-function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
-
 document.addEventListener("turbo:load", function() {
   let progressBars = document.querySelectorAll(".circular-progress");
   let valueContainers = document.querySelectorAll(".value-container");
 
   let temps = document.querySelectorAll(".value");
-
-  sleep(100).then(() => {
-
 
     temps.forEach((temp, i) => {
 
@@ -49,5 +40,4 @@ document.addEventListener("turbo:load", function() {
         progressValue++;
       }, speed);
     })
-  })
 });
