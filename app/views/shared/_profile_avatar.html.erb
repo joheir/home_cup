@@ -1,13 +1,15 @@
 <div class="avatar-profile">
   <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     <ion-icon name="person-circle-outline">  <%= cl_image_tag @profile.picture.key, height: 40, width: 40, crop: :fill, class: "avatar" %>
+    <div class="bell-badge">
       <% if @chats.empty?  %>
-        <i class="fa-regular fa-bell"></i>
+        <i class="fa-solid fa-bell" style="color: black; font-size: 13px;"></i>
       <% elsif @chats.last.done? %>
-        <i class="fa-regular fa-bell"></i>
+        <i class="fa-solid fa-bell" style="color: red; font-size: 13px;"></i>
       <% else %>
-        <i class="fa-solid fa-bell"></i>
+        <i class="fa-solid fa-bell" style="font-size: 13px;"></i>
       <% end %>
+    </div>
   </ion-icon>
   </a>
   <ul class="dropdown-menu">

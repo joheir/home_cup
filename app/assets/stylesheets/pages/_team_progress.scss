@@ -6,11 +6,63 @@
   }
 }
 
+.fun-text{
+  display: flex;
+  justify-content: space-between;
+}
+
 .progress-box {
   display: flex;
   justify-content: space-between;
-  padding: 20px;
-  background-color: #d0d0d085;
+  padding: 20px 20px 5px 20px;
   margin-top: 10px;
-  border-radius: 10px;
+  border-radius: 15px;
+  background-color: #f7f7f785;
 }
+
+.container-progress {
+  height: 100px;
+  width: 100px;
+  padding-top: 10px;
+}
+.circular-progress {
+  position: relative;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background-color: #f2777790;
+}
+.circular-progress:before {
+  content: "";
+  position: absolute;
+  height: 84%;
+  width: 84%;
+  background-color: $green-blue;
+  border-radius: 50%;
+}
+.value-container {
+  position: relative;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+  font-size: 24px;
+  color: $white;
+}
+
+.total-p-page{
+  padding: 0;
+}
+
+.flex-column{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  p{
+    padding-top: 16px;
+  }
+}
+
+// #ededed85;
