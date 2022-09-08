@@ -23,8 +23,12 @@
         <div class="card-meal">
           <p class="card-text"><%= meal.name %></p>
         </div>
-          <div class="like-link">
+        <div class="like-link">
           <%= render 'meals/like_link', meal: meal %>
+        </div>
+        <div class="votes-number">
+          <i class="fa-regular fa-thumbs-up"></i>
+          <%= meal.votes_for.size %>
         </div>
       </div>
     </div>

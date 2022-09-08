@@ -5,9 +5,9 @@
       <% if @chats.empty?  %>
         <i class="fa-solid fa-bell" style="color: black; font-size: 10px;"></i>
       <% elsif @chats.last.done? %>
-        <i class="fa-solid fa-bell" style="color: red; font-size: 10px;"></i>
-      <% else %>
         <i class="fa-solid fa-bell" style="font-size: 10px;"></i>
+      <% else %>
+        <i class="fa-solid fa-bell" style="color: red; font-size: 10px;"></i>
       <% end %>
     </div>
   </ion-icon>
