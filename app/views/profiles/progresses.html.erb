@@ -2,7 +2,7 @@
   <div class="header">
     <h1>Team's progress 🚀</h1>
   </div>
-  <% @profiles.each do |profile| %>
+  <% @profiles.excluding(@profile).each do |profile| %>
     <%= link_to new_profile_chat_path(profile) do %>
       <div class="progress-box">
         <%= cl_image_tag profile.picture.key, height: 90, width: 90, crop: :fill, class: "big-avatar" %>
