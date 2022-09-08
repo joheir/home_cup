@@ -1,5 +1,14 @@
-.wrapper h1 {
-  margin-bottom: 5px;
+.wrapper {
+  margin-top: 10px;
+
+  h1 {
+    margin-bottom: 5px;
+  }
+
+  .dash-headers {
+    margin: 10px;
+  }
+
 }
 
 // MEALS
@@ -53,7 +62,7 @@
   border-radius: 10px;
 
   h2 {
-    margin-bottom: 5px;
+    margin-bottom: 20px;
   }
 }
 
@@ -101,6 +110,15 @@
   margin-bottom: 10px;
 }
 
+.add-task-btn {
+  color: $yelloww;
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  font-size: 24px;
+}
+
+// PACKING
 .packing-list {
   margin: 5px;
   padding: 10px;
@@ -117,12 +135,8 @@
     font-size: 25px;
     color: $peach;
   }
-}
 
-.add-task-btn {
-  color: $yelloww;
-  position: absolute;
-  right: 5px;
-  bottom: 5px;
-  font-size: 24px;
+  p {
+    margin-bottom: 5px;
+  }
 }

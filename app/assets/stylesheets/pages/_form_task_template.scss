@@ -13,14 +13,14 @@
   font-size: 1.0rem;
   border-radius: 50rem;
   padding: 0.1rem 0.5rem;
-  background-color: #fadbbc;
-  color: $dark-orange;
-  border: 1px solid $dark-orange;
+  background-color: #d3e7ffc1;
+  color: $dark-blue;
+  border: 1px solid $dark-blue;
   margin-right: 0.6rem;
   margin-bottom: 0.4rem;
 }
 
 .tag-selector:checked + label {
-  background-color: $dark-orange;
+  background-color: $dark-blue;
   color: white;
 }
