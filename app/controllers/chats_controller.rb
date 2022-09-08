@@ -1,5 +1,5 @@
 class ChatsController < ApplicationController
-  before_action :set_chat, only: %i[index, new create]
+  before_action :set_chat, only: %i[index new create]
 
   def index
     @profile = Profile.find(session[:current_profile_id])

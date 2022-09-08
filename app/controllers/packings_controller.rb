@@ -1,10 +1,10 @@
 class PackingsController < ApplicationController
  before_action :set_profile
- before_action :set_chat
+ before_action :set_chat, only: %i[index new]
 
 
   def index
-    @packings = current_account.packings
+    @packings = Packing.all
   end
 
   def show
