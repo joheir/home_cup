@@ -61,7 +61,11 @@
               <%= image_tag(top_meal.picture_url, class:"img-p") %>
             <% end %>
         </div>
-          <p class= "name-meal"> <%= top_meal.name %> </p>
+          <% if top_meal.nil? %>
+            <p class= "name-meal">No meals chosen yet</p>
+          <% else %>
+            <p class= "name-meal"> <%= top_meal.name %> </p>
+          <% end %>
       <% end %>
     </div>
 
