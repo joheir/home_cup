@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <h2>Meal Options</h2>
 
 <% if @profile.admin? %>
@@ -7,9 +8,22 @@
 <% if @profile.admin? %>
   <%= link_to "Remove selected meals", destroy_all_meals_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "del-items" %>
 <% end %>
+=======
+<h1>Meal Options</h1>
+>>>>>>> master
 
+<div class="centralize">
+  <% if @profile.admin? %>
+    <%= link_to "Search meals", search_profile_meals_path, class:"btn-yellow-small-sq" %>
+  <% end %>
+</div>
+<div class="centralize1">
+  <% if @profile.admin? %>
+    <%= link_to "Remove all meals", destroy_all_meals_path, data: {turbo_method: :delete}, class: "button-overview-task-template" %>
+  <% end %>
+</div>
 <div class="container text-center card-wrapper">
-   <% @meals.each do |meal| %>
+   <% @meals.order(id: :desc).each do |meal| %>
       <div class="card" style="width: 10rem;">
       <img src="<%= meal.picture_url %>" class="card-img-top" alt="...">
       <div class="card-body">
@@ -21,5 +35,3 @@
     </div>
   <% end %>
 </div>
-
-

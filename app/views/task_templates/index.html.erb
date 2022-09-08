@@ -1,10 +1,10 @@
 <% @disable_log_out = true %>
-<h1 class="task-temp-text">Team's tasks</h1>
-<div><%= render "shared/guidelines" %></div>
-<%= render "form", task_template: @task_template %>
 
 <div class="task-template-tasks">
-  <h3> Overview of added tasks</h3>
+  <h3> Overview of household tasks</h3>
+  <div class="overview-of-tasks-button-div">
+    <%= button_to "Assign tasks!", create_multiple_profile_tasks_path, class: "btn-yellow-small-sq", method: :post %>
+  </div>
   <div class="task-templates-page">
     <ul>
       <% @task_templates.each do |task| %>
@@ -22,5 +22,3 @@
     </ul>
   </div>
 </div>
-
-<%= button_to "Assign tasks!", create_multiple_profile_tasks_path, class: "btn-orange-big-round", method: :post %>

@@ -22,13 +22,13 @@ json_recipes = JSON.parse(response)
 #Meal.create(account_id: 1, name: json_recipes[0]['name'], url: json_recipes[0]["originalURL"], picture_url: json_recipes[0]#["imageURL"])
 
 #Create all the meals
-json_recipes.each do |recipe|
-    puts recipe
-   if recipe["originalURL"].present?
-      Meal.create!(account_id: 1, name: recipe['name'], url: recipe["originalURL"], picture_url: recipe["imageURL"])
-   end
-end
+# json_recipes.each do |recipe|
+#     puts recipe
+#    if recipe["originalURL"].present?
+#       Meal.create!(account_id: 1, name: recipe['name'], url: recipe["originalURL"], picture_url: recipe["imageURL"])
+#    end
+# end
 
-Packing.create(name: "School", profile: Profile.first, item1: "pen", item2: "pencil", item3: "math book", item4: "notebook")
-Packing.create(name: "Guitar", profile: Profile.first, item1: "guitar", item2: "pencil", item3: "notebook", item3: "sheet music")
-Packing.create(name: "Tennis", profile: Profile.first, item1: "tennis racket", item2: "tennis shoes", item3: "tennis ball", item3: "towel", item3: "shorts")
+# Packing.create(name: "School", profile: Profile.first, item1: "pen", item2: "pencil", item3: "math book", item4: "notebook")
+# Packing.create(name: "Guitar", profile: Profile.first, item1: "guitar", item2: "pencil", item3: "notebook", item3: "sheet music")
+# Packing.create(name: "Tennis", profile: Profile.first, item1: "tennis racket", item2: "tennis shoes", item3: "tennis ball", item3: "towel", item3: "shorts")

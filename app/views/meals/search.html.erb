@@ -1,5 +1,5 @@
 <div class="wrapper-meal-search">
-  <h2>Search for meals 🍽</h2>
+  <h1>Search for meals 🍽</h1>
   <%= form_with url: search_profile_meals_path, method: :get, class: "d-flex" do %>
     <%= text_field_tag :query,
       params[:query],
@@ -12,7 +12,7 @@
 
   <div class="container text-center card-wrapper">
     <% @processed_recipes.each do |recipe| %>
-      <%= button_to profile_meals_path(@profile, name: recipe[:name], picture_url: recipe[:picture_url], url: recipe[:url], query: params[:query]), method: :post, remote: true, class:"mealSelectButton" do %>
+      <%= button_to profile_meals_path(@profile, name: recipe[:name], picture_url: recipe[:picture_url], url: recipe[:url], query: params[:query]), method: :post, data: {turbo_confirm: "Recipe saved!"}, remote: true, class:"mealSelectButton" do %>
         <div class="card" style="width: 10rem;">
           <img src="<%= recipe[:picture_url] %>" class="card-img-top" alt="...">
           <div class="card-body">

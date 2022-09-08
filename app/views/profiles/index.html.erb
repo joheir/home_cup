@@ -1,11 +1,11 @@
 <div class="wrapper">
   <div class="title-text">
-    <% if Profile.all.count > 0 %>
+    <% if current_account.profiles.count > 0 %>
       <h1>Welcome back!</h1>
       <h2>Here is your team! ⭐️</h2>
     <% else %>
-      <h1>Wolcome to HomeCup!</h1>
-       <h2>Please add your your team members! ⭐️</h2>
+      <h1>Welcome to HomeCup!</h1>
+      <h2>Please add your team members! ⭐️</h2>
     <% end %>
 
   </div>

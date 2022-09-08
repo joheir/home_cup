@@ -12,3 +12,9 @@
 @import "pages/index";
 @import "pages/profiles_index";
 @import "simple_calendar";
+
+/*
+ *= require_self
+ *= require sweetalert
+ *= require_tree .
+ */

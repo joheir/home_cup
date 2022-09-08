@@ -7,6 +7,12 @@ class TaskTemplatesController < ApplicationController
     @task_template = TaskTemplate.new
   end
 
+  def new
+    @disable_nav = true
+    @task_templates = TaskTemplate.where(account: current_account)
+    @task_template = TaskTemplate.new
+  end
+  
   def create
     @selected = params[:weekdays]
     @weekdays = @selected["selected"]
