@@ -2,7 +2,7 @@ class MealsController < ApplicationController
   before_action :set_profile, except: %i[destroy_all]
 
   def index
-    @meals = Meal.all
+    @meals = current_account.meals
   end
 
   def new
@@ -18,10 +18,12 @@ class MealsController < ApplicationController
     @meal.name = params[:name]
     if @meal.save
       flash[:notice] = "Meal is successfully added"
+      redirect_to profile_meals_path(@profile, query: params[:query])
     else
       flash[:alert] = "Something went wrong"
+      redirect_to search_profile_meals_path(@profile, query: params[:query])
     end
-    redirect_to search_profile_meals_path(@profile, query: params[:query])
+
   end
 
   def search
@@ -52,7 +54,7 @@ class MealsController < ApplicationController
 
 
   def destroy_all
-    @meals = Meal.all
+    @meals = current_account.meals
     @meals.destroy_all
     redirect_to profile_meals_path(session[:current_profile_id])
   end

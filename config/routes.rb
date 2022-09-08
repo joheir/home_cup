@@ -28,7 +28,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :task_templates, only: %i[create index update destroy]
+  resources :task_templates, only: %i[create index update destroy new]
   resources :profile_tasks, only: %i[destroy] do
     collection do
       post 'create_multiple'

@@ -1,0 +1,8 @@
+<% @disable_log_out = true %>
+<h1 class="task-temp-text">Team's tasks</h1>
+<div><%= render "shared/guidelines" %></div>
+<%= render "form", task_template: @task_template %>
+
+<div class="overview-of-tasks-button-div">
+  <%= link_to "See all household tasks", task_templates_path, class:"button-overview-task-template"  %>
+</div>
