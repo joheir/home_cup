@@ -18,7 +18,9 @@
       <div class="card" style="width: 10rem;">
       <img src="<%= meal.picture_url %>" class="card-img-top" alt="...">
       <div class="card-body">
-        <p class="card-text"><%= meal.name %></p>
+        <div class="card-meal">
+         <p class="card-text"><%= meal.name %></p>
+        </div>
          <div class="like-link">
           <%= render 'meals/like_link', meal: meal %>
         </div>
