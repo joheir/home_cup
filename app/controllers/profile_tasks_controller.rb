@@ -18,11 +18,16 @@ class ProfileTasksController < ApplicationController
     @template_tasks.each do |t_task|
       @p_task = ProfileTask.new
       @p_task.task_template_id = t_task.id
+
       profile = current_account.profiles.order(Arel.sql('random()')).first
-      if profile.id <= t_task.min_age
-        @p_task.profile = profile
-        @p_task.save!
+
+      until profile.age >= t_task.min_age do
+        profile = current_account.profiles.order(Arel.sql('random()')).first
       end
+
+      @p_task.profile = profile
+      @p_task.save!
+
     end
 
     the_profile_id = session[:current_profile_id] || current_account.profiles.first.id
