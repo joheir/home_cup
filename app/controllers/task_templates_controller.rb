@@ -15,7 +15,7 @@ class TaskTemplatesController < ApplicationController
 
   def create
     @selected = params[:weekdays]
-    @weekdays = @selected["selected"]
+    @weekdays = @selected["weekdays"]
     @weekdays.each do |weekday|
       if weekday.present?
         @task_template = TaskTemplate.new(task_template_params)
