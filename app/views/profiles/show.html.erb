@@ -1,8 +1,10 @@
 <div class="wrapper">
-  <h1>Welcome, <%= @profile.name %> 🏠</h1>
-
+  <div class="dash-headers">
+    <h1>Welcome, <%= @profile.name %> 🏠</h1>
+    <h6>Your personal dashboard</h6>
+  </div>
   <div class="progressoverview">
-    <h2>Progress</h2>
+    <h2>Tasks Progress</h2>
     <div class="progresses">
       <div class="personal-progress">
         <%= link_to profile_profile_tasks_path(@profile) do %>
@@ -33,6 +35,11 @@
         <% end %>
       </div>
     </div>
+    <% if @profile.admin? %>
+      <%= link_to new_task_template_path do %>
+        <i class="fa-solid fa-circle-plus add-task-btn"></i>
+      <% end %>
+    <% end %>
   </div>
 
   <hr>
@@ -45,7 +52,6 @@
           <% @meals.each_with_object({}) do |meal, total| %>
             <% result << meal.votes_for.size %>
             <% end %>
-            <%= result.max %>
             <% maximum = result.max %>
             <% top_meal = @meals.select {|meal| meal.votes_for.size == maximum}.first %>
             <!--<img src=<%#= top_meal.picture_url %> class="img-p" alt="img-p">-->
@@ -55,6 +61,7 @@
               <%= image_tag(top_meal.picture_url, class:"img-p") %>
             <% end %>
         </div>
+          <p class= "name-meal"> <%= top_meal.name %> </p>
       <% end %>
     </div>
 
@@ -62,7 +69,8 @@
 
   <div class="packing-list">
     <%= link_to profile_packings_path(@profile) do %>
-      <h2>My packing list <i class="fa-solid fa-briefcase fa-2x"></i> </h2>
+      <h2>Don't forget your bag </h2>
+      <p>Find out what to bring: <i class="fa-solid fa-briefcase fa-2x"></i> </p>
     <% end %>
   </div>
 

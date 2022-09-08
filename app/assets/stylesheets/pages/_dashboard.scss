@@ -1,20 +1,40 @@
+.wrapper {
+  margin-top: 10px;
+
+  h1 {
+    margin-bottom: 5px;
+  }
+
+  .dash-headers {
+    margin: 10px;
+  }
+
+}
+
+// MEALS
 .meal-card-dash {
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  height: 250px;
 }
 
-.meal-card-dash > img {
-  height: 150px;
+.meal-card-dash .img-p {
+  height: 400px;
   width: 100%;
   object-fit: cover;
 }
 
-.meal-card-dash p {
-  font-size: 12px;
-  opacity: .7;
-  margin: 0;
-}
+// .img-p {
+//   background-image: cover;
+//   background-repeat: no-repeat;
+//   width: 400px;
+// }
+
+// .meal-card-dash p {
+//   opacity: .7;
+//   margin: 0;
+// }
 
 .meal-card-dash .meal-card-infos {
   padding: 16px;
@@ -24,12 +44,37 @@
   position: relative;
 }
 
+.name-meal {
+  position: absolute;
+  left: 18px;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.694);
+  border-radius: 5px;
+  padding: 1px 3px;
+  font-size: 16px;
+}
+
+.meals {
+  position: relative;
+  margin: 5px;
+  padding: 10px;
+  background-color: rgba(225, 225, 225, 0.306);
+  border-radius: 10px;
+
+  h2 {
+    margin-bottom: 20px;
+  }
+}
+
+
+// Progress
+
 .progressoverview {
   margin: 5px;
   padding: 20px;
   background-color: rgba(225, 225, 225, 0.306);
   border-radius: 10px;
-
+  position: relative;
   h2 {
     margin-bottom: 10px;
   }
@@ -65,13 +110,15 @@
   margin-bottom: 10px;
 }
 
-.meals {
-  margin: 5px;
-  padding: 10px;
-  background-color: rgba(225, 225, 225, 0.306);
-  border-radius: 10px;
+.add-task-btn {
+  color: $yelloww;
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  font-size: 24px;
 }
 
+// PACKING
 .packing-list {
   margin: 5px;
   padding: 10px;
@@ -80,12 +127,16 @@
   display: flex;
   justify-content: center;
 
+  h2 {
+    margin-bottom: 5px;
+  }
+
   i {
     font-size: 25px;
     color: $peach;
   }
-}
 
-.wrapper h1 {
-  font-weight: bold;
+  p {
+    margin-bottom: 5px;
+  }
 }

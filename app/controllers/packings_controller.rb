@@ -4,7 +4,7 @@ class PackingsController < ApplicationController
 
 
   def index
-    @packings = Packing.all
+    @packings = @profile.packings
   end
 
   def show
