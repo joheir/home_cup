@@ -55,15 +55,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_07_113104) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
-  create_table "chats", force: :cascade do |t|
-    t.integer "sender_id"
-    t.integer "receiver_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "message"
-    t.boolean "done", default: false
-  end
-
   create_table "meals", force: :cascade do |t|
     t.string "name"
     t.string "url"
@@ -91,8 +82,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_07_113104) do
     t.bigint "profile_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "position"
-    t.date "scheduled_date"
     t.boolean "checked", default: false
     t.index ["profile_id"], name: "index_packings_on_profile_id"
   end
