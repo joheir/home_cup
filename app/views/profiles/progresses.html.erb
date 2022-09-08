@@ -4,22 +4,23 @@
   </div>
   <% @profiles.excluding(@profile).each do |profile| %>
     <%= link_to new_profile_chat_path(profile) do %>
-      <div class="progress-card">
         <div class="progress-box">
-          <%= cl_image_tag profile.picture.key, height: 100, width: 100, crop: :fill, class: "big-avatar" %>
-          <div class="container-progress total-p-page">
-            <div class="circular-progress">
-              <div class="value value-container"><%= profile.progress %></div>
-            </div>
+          <div class="flex-column">
+            <%= cl_image_tag profile.picture.key, height: 100, width: 100, crop: :fill, class: "big-avatar" %>
+            <p> <%= profile.name %> </p>
           </div>
-        </div>
-        <div class="fun-text">
+          <div class="flex-column">
+            <div class="container-progress total-p-page">
+              <div class="circular-progress">
+                <div class="value value-container"><%= profile.progress %></div>
+              </div>
+            </div>
             <% if profile.progress < 30 %>
-              <p>Someone is snoozing 💤</p>
+              <p>Snoozer 💤</p>
             <% elsif profile.progress < 60 %>
-              <p>Hard worker 💪</p>
+              <p>Energetic 💪</p>
             <% elsif profile.progress < 90 %>
-              <p>Wow, a superstar! ⭐️</p>
+              <p>Superstar! ⭐️</p>
             <% elsif profile.progress < 100 %>
               <p>Champion! 🏆</p>
             <% end %>
