@@ -91,8 +91,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_07_202233) do
     t.bigint "profile_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "position"
-    t.date "scheduled_date"
     t.boolean "checked", default: false
     t.index ["profile_id"], name: "index_packings_on_profile_id"
   end

@@ -1,16 +1,7 @@
-.sticky-test {
-  width: 95%;
-  height: 60px;
-  position: absolute;
-  bottom:0;
-  right: 0;
-}
-
 .navbar-wrapper {
+  height: 60px;
   background-color: $dark-blue;
   display: flex;
-  position: sticky;
-  bottom: 0;
   border-top-left-radius: 30px;
 }
 
