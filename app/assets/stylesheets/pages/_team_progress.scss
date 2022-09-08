@@ -10,7 +10,44 @@
   display: flex;
   justify-content: space-between;
   padding: 20px;
-  background-color: #d0d0d085;
+  background-color: #f4f4f485;
   margin-top: 10px;
-  border-radius: 10px;
+  border-radius: 15px;
 }
+
+.container-progress {
+  height: 100px;
+  width: 100px;
+  padding-top: 10px;
+}
+.circular-progress {
+  position: relative;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background-color: #f2777790;
+}
+.circular-progress:before {
+  content: "";
+  position: absolute;
+  height: 84%;
+  width: 84%;
+  background-color: $green-blue;
+  border-radius: 50%;
+}
+.value-container {
+  position: relative;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+  font-size: 24px;
+  color: $white;
+}
+
+.total-p-page{
+  padding: 0;
+}
+
+
+// #ededed85;
