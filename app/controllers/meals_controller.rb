@@ -69,7 +69,7 @@ class MealsController < ApplicationController
       @meal.liked_by @profile
     end
     # render 'like', formats: :js
-    redirect_to profile_meals_path
+    redirect_to profile_meals_path(@profile)
   end
 
   private
