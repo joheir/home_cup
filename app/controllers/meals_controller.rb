@@ -65,6 +65,7 @@ class MealsController < ApplicationController
     @meal = Meal.find(params[:id])
     if @profile.voted_for? @meal
       @meal.unliked_by @profile
+      redirect_to profile_meals_path(@profile)
     else
       @meal.liked_by @profile
     end
