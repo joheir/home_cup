@@ -6,7 +6,9 @@
   <% @profiles.excluding(@profile).each do |profile| %>
     <%= link_to new_profile_chat_path(profile) do %>
         <div class="progress-box">
-          <i class="fa-solid fa-bell bell-btn" style="color: black; font-size: 16px;"></i>
+          <div class="message-bell">
+            <i class="fa-solid fa-bell bell-btn" style="color: black; font-size: 16px;"></i>
+          </div>
           <div class="flex-column">
             <%= cl_image_tag profile.picture.key, height: 100, width: 100, crop: :fill, class: "big-avatar" %>
             <p> <%= profile.name %> </p>
