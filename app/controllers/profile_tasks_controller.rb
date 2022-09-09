@@ -21,7 +21,7 @@ class ProfileTasksController < ApplicationController
 
       profile = current_account.profiles.order(Arel.sql('random()')).first
 
-      until profile.age >= t_task.min_age do
+      while profile.age <= t_task.min_age
         profile = current_account.profiles.order(Arel.sql('random()')).first
       end
 
