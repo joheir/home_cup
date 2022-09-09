@@ -5,6 +5,9 @@
   <div class="overview-of-tasks-button-div">
     <%= button_to "Assign tasks!", create_multiple_profile_tasks_path, class: "btn-yellow-small-sq", method: :post %>
   </div>
+  <div class="btn-all-tasks">
+    <%= link_to "Create more tasks", new_task_template_path, class:"button-overview-task-template" %>
+  </div>
   <div class="task-templates-page">
     <ul>
       <% @task_templates.each do |task| %>
