@@ -13,11 +13,12 @@
 
 .progress-box {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   padding: 20px 20px 5px 20px;
   margin-top: 10px;
   border-radius: 15px;
   background-color: #f7f7f785;
+  position: relative;
 }
 
 .container-progress {
@@ -66,3 +67,14 @@
 }
 
 // #ededed85;
+
+.message-bell{
+  position: absolute;
+  top: 5px;
+  right: 7px;
+}
+
+
+.header-progress-p-p{
+  margin-top: 74px;
+}
