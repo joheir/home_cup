@@ -16,7 +16,7 @@ body.packings {
 }
 
 body.profile_tasks {
-  background-image: url("dashboard-profile-blob-inversed.png");
+  background-image: url("task-blob.png");
 }
 
 body.profiles {
@@ -25,6 +25,10 @@ body.profiles {
 
 body.task_templates {
   background-image: url("task_form_blob_inversed.png");
+}
+
+body.chats {
+  background-image:  url("task-blob.png");
 }
 
 .img {
