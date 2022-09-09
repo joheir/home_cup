@@ -3,7 +3,7 @@
 
 <div class="bags-wrapper">
   <% @packings.each do |packing| %>
-    <a href="<%= profile_packings_path(packing_id: packing.id, profile_id: @profile.id) %>">
+    <a href="<%= profile_packings_path(packing_id: packing.id, profile_id: @profile.id) %>" class="one-bag">
         <i class="fa-solid fa-briefcase fa-2x" style="color:<%= packing.color %>;"></i>
         <p  style="color:<%= packing.color %>;"> <%= packing.name %> </p>
   <% end %>
@@ -19,7 +19,7 @@
   <% if packing.present? %>
     <div id="content">
           <div class="bags">
-            <h3><%= packing.name.capitalize %></h3>
+            <h3><u><%= packing.name.capitalize %></u></h3>
             <%= show_all_packing_items(packing) %>
             <%= link_to 'Delete Bag', profile_packing_path(@profile, packing), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "del-items" %>
           </div>

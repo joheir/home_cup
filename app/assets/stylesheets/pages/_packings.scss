@@ -1,5 +1,6 @@
 .bags {
   margin-top: 10px;
+  text-align: center;
 }
 
 .bags a {
@@ -42,6 +43,12 @@
   background-color: $white;
   box-shadow: 0px 3px 5px -1px rgba(0,0,0,0.5);
   position: relative;
+
+  .one-bag {
+    margin: 5px;
+    text-align: center;
+
+  }
 }
 
 .bags-wrapper i {
